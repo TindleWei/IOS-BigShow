@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BSProgressView.h"
 @interface BSNavView : UIView
+@property (nonatomic,retain) BSProgressView *refreshView;
+@property(nonatomic,retain)UIButton *arrowBtn;
+
+//+(VZNavView*)shared;
++(float)height;
+
+-(void)arrowDown;
+-(void)arrowLeft;
+-(void)showClose:(BOOL)flag;
 
 @end
+
+#define  REFRESH_TRIGGER 24
+#define  REFRESH_HEIGHT 80
