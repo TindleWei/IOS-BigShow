@@ -1,7 +1,7 @@
-platform :ios, "6.1"
+platform :ios, "7.0"
 pod 'AVOSCloud'
 pod 'AVOSCloudSNS'
 pod 'SIAlertView'
-pod 'MMDrawerController'
 pod 'SDWebImage'
+pod 'MMDrawerController'
 

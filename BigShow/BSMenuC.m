@@ -10,94 +10,137 @@
 #import <QuartzCore/QuartzCore.h>
 #import <AVOSCloud/AVImageRequestOperation.h>
 #import "BSNavView.h"
+#import <UIViewController+MMDrawerController.h>
+#import <SIAlertView/SIAlertView.h>
+#import <AVOSCloudSNS/AVUser+SNS.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
+CATransform3D CATransform3DMakePerspective(CGPoint center, float disZ){
+    CATransform3D transToCenter = CATransform3DMakeTranslation(-center.x, -center.y, 0);
+    CATransform3D transBack = CATransform3DMakeTranslation(center.x, center.y, 0);
+    CATransform3D scale = CATransform3DIdentity;
+    scale.m34 = -1.0f/disZ;
+    return CATransform3DConcat(CATransform3DConcat(transToCenter, scale), transBack );
+}
+CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ){
+    return CATransform3DConcat(t, CATransform3DMakePerspective(center, disZ));
+}
 
 @interface BSMenuC ()
-
+@property (weak, nonatomic) IBOutlet UIImageView *avatar;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLb;
+@property (nonatomic) UITapGestureRecognizer *loginTap;
 @end
 
 @implementation BSMenuC
 
+-(UIStatusBarStyle)perferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
+-(void)onLogin:(BSUser*)user{
+    [self.avatar setImageWithURL:[NSURL URLWithString:[user objectForKey:@"avatar"]]placeholderImage:[UIImage imageNamed:@"head"]];
+}
+
+-(void)onLogout{
+    [model logout];
+    self.avatar.image = [UIImage imageNamed:@"head"];
+}
+
+-(void)login{
+    if ([BSUser currentUser]==nil){
+        [model login:^(id object, NSError *error) {
+            if (error) {
+                NSLog(@"login error %@", [error description]);
+            } else if(object){
+                [self onLogin:object];
+            }
+        }];
+    }else{
+        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"注销" andMessage:@"确定要注销吗?"];
+        
+        [alertView addButtonWithTitle:@"确定"
+                                 type:SIAlertViewButtonTypeDestructive
+                              handler:^(SIAlertView *alert) {
+                                  [self onLogout];
+                              }];
+        
+        [alertView addButtonWithTitle:@"取消"
+                                 type:SIAlertViewButtonTypeCancel
+                              handler:^(SIAlertView *alert) {
+                                  
+                              }];
+        
+        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+        
+        [alertView show];
+    }
+}
+
+- (void)dealloc
+{
+    NSLog(@"menu release?");
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [AVAnalytics beginLogPageView:@"左菜单"];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [AVAnalytics endLogPageView:@"左菜单"];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.tableView.tableHeaderView.frame=CGRectMake(0, 0, 10, 0);
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self onLogin:[BSUser currentUser]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UINavigationController *nav = (id)self.mm_drawerController.centerViewController;
     
-    // Configure the cell...
-    
-    return cell;
+    if (indexPath.section==1) {
+        [nav setViewControllers:@[[self.storyboard instantiateViewControllerWithIdentifier:@"SettingC"]] animated:NO];
+    } else if(indexPath.row) {
+        switch (indexPath.row) {
+            case 0:
+                [self login];
+                return;
+                break;
+                
+            case 1:
+            {
+                UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"PostListC"];
+                [nav setViewControllers:@[vc] animated:NO];
+            }
+                break;
+                
+            case 2:
+            {
+//                VZNearC *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"NearC"];
+//                [nav setViewControllers:@[vc] animated:NO];
+                break;
+            }
+                
+            case 3:
+            {
+//                VZStatusListC *vc=[[VZStatusListC alloc] initWithStyle:UITableViewStylePlain];
+//                [nav setViewControllers:@[vc] animated:NO];
+                break;
+            }
+            default:
+                break;
+        }
+    }
+    [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
