@@ -82,7 +82,7 @@ BOOL is7orLater(){
 
 //登录方法
 -(void)login:(AVUserResultBlock)callback{
-    [AVOSCloudSNS setupPlatform:AVOSCloudSNSSinaWeibo withAppKey:@"718087462" andAppSecret:@"e8c9fa9fd28daa480a871c1ae0115565" andRedirectURI:@"http://vz.avosapps.com/oauth?type=weibo"];
+    [AVOSCloudSNS setupPlatform:AVOSCloudSNSSinaWeibo withAppKey:@"2858658895" andAppSecret:@"9d97c1cce2893cbdcdc970f05bc55fe4" andRedirectURI:@"http://vz.avosapps.com/oauth?type=weibo"];
     
     [AVOSCloudSNS loginWithCallback:^(NSDictionary* object, NSError *error){
         if (error==nil && object) {
@@ -202,7 +202,7 @@ BOOL is7orLater(){
         
         [self.client enqueueHTTPRequestOperation:opt];
     }else{
-        callback(nil,[NSError errorWithDomain:@"vz" code:1 userInfo:nil]);
+        callback(nil,[NSError errorWithDomain:@"error" code:1 userInfo:nil]);
     }
     
 }
@@ -229,7 +229,7 @@ BOOL is7orLater(){
         
         [self.client enqueueHTTPRequestOperation:opt];
     }else{
-        callback(nil,[NSError errorWithDomain:@"vz" code:1 userInfo:nil]);
+        callback(nil,[NSError errorWithDomain:@"error" code:1 userInfo:nil]);
     }
 }
 
@@ -243,7 +243,6 @@ BOOL is7orLater(){
 
 -(NSString*)wbid{
     NSString *uid=self[@"authData"][@"weibo"][@"uid"];
-    
     return uid;
 }
 

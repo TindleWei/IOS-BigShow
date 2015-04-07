@@ -108,17 +108,16 @@ CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
     
     if (indexPath.section==1) {
         [nav setViewControllers:@[[self.storyboard instantiateViewControllerWithIdentifier:@"SettingC"]] animated:NO];
-    } else if(indexPath.row) {
+    } else if(indexPath.section==0) {
         switch (indexPath.row) {
             case 0:
-                NSLog(@"click table 0");
                 [self login];
                 return;
                 break;
                 
             case 1:
             {
-                UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"PostListC"];
+                UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"HomeC"];
                 [nav setViewControllers:@[vc] animated:NO];
             }
                 break;

@@ -12,6 +12,7 @@
 		1F6A07371ACD46D000770754 /* BSProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6A07361ACD46D000770754 /* BSProgressView.m */; };
 		1F6A073A1ACD470600770754 /* BSStacView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6A07391ACD470600770754 /* BSStacView.m */; };
 		1F6A073D1ACD47CC00770754 /* BSSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6A073C1ACD47CC00770754 /* BSSearchBar.m */; };
+		1F6E1B101AD3B4DE003787D6 /* BSFindC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E1B0F1AD3B4DE003787D6 /* BSFindC.m */; };
 		1FA97ED71ACD1DB90075130C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA97ED61ACD1DB90075130C /* CoreGraphics.framework */; };
 		1FA97ED91ACD1DCC0075130C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA97ED81ACD1DCC0075130C /* UIKit.framework */; };
 		1FA97EDB1ACD1DD50075130C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA97EDA1ACD1DD50075130C /* Foundation.framework */; };
@@ -49,6 +50,8 @@
 		1F6A07391ACD470600770754 /* BSStacView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSStacView.m; sourceTree = "<group>"; };
 		1F6A073B1ACD47CC00770754 /* BSSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSearchBar.h; sourceTree = "<group>"; };
 		1F6A073C1ACD47CC00770754 /* BSSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSearchBar.m; sourceTree = "<group>"; };
+		1F6E1B0E1AD3B4DE003787D6 /* BSFindC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSFindC.h; sourceTree = "<group>"; };
+		1F6E1B0F1AD3B4DE003787D6 /* BSFindC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSFindC.m; sourceTree = "<group>"; };
 		1FA97ED61ACD1DB90075130C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1FA97ED81ACD1DCC0075130C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1FA97EDA1ACD1DD50075130C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -115,6 +118,8 @@
 				1F6A07391ACD470600770754 /* BSStacView.m */,
 				1F6A073B1ACD47CC00770754 /* BSSearchBar.h */,
 				1F6A073C1ACD47CC00770754 /* BSSearchBar.m */,
+				1F6E1B0E1AD3B4DE003787D6 /* BSFindC.h */,
+				1F6E1B0F1AD3B4DE003787D6 /* BSFindC.m */,
 			);
 			name = V;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				1F1CD5511ACE6F4500DF5186 /* BSHomeC.m in Sources */,
 				1FA97EE41ACD2A810075130C /* BSMenuC.m in Sources */,
 				1F6A073D1ACD47CC00770754 /* BSSearchBar.m in Sources */,
+				1F6E1B101AD3B4DE003787D6 /* BSFindC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -70,7 +70,7 @@
     MMDrawerController *menu = [[MMDrawerController alloc]initWithCenterViewController:nav leftDrawerViewController:menuC];
     menu.openDrawerGestureModeMask=MMOpenDrawerGestureModeNone;
     menu.closeDrawerGestureModeMask=MMCloseDrawerGestureModeTapCenterView;
-    menu.maximumLeftDrawerWidth=64;
+    menu.maximumLeftDrawerWidth=128;
     
     menu.maximumRightDrawerWidth=64;
     

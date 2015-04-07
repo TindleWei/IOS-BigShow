@@ -55,7 +55,7 @@ text callback:(AVSNSResultBlock)callback;
 @interface BSUser : AVUser<AVSubclassing>
 
 @property(nonatomic, copy) NSString *avatar;
-@property(nonatomic, readonly) NSString *wbid;
+@property(nonatomic, readonly) NSString *uid;
 -(NSString*)wbid;
 
 /**

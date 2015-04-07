@@ -9,9 +9,6 @@
 #import "BSHomeC.h"
 
 @interface BSHomeC ()
-{
-    BOOL _isRun;
-}
 @property (weak, nonatomic) IBOutlet UIImageView *charcterImg;
 @property (weak, nonatomic) IBOutlet UIButton *startBtn;
 
@@ -21,7 +18,6 @@
 @property (nonatomic, strong) NSArray *imageArray;
 
 @property (nonatomic, strong)NSThread *thread;
-
 
 @end
 
@@ -71,10 +67,7 @@
         [self performSelectorOnMainThread:@selector(resetImage) withObject:nil waitUntilDone:NO];
         
         NSLog(@"Thread Loop");
-        
-        
     }
-    
 }
 
 -(void)resetImage{
@@ -88,8 +81,6 @@
         self.index=0;
     }
     self.charcterImg.image = [UIImage imageNamed:self.imageArray[self.index]];
-    
-    
 }
 
 
