@@ -13,7 +13,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_thief" id="Fu2-9O-Ps2">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" id="Fu2-9O-Ps2">
                                 <rect key="frame" x="100" y="180" width="120" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -33,7 +33,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="2dt-hY-Bdb"/>
                     <connections>
-                        <outlet property="characterImage" destination="Fu2-9O-Ps2" id="np6-Bk-YmT"/>
+                        <outlet property="charcterImg" destination="Fu2-9O-Ps2" id="zmM-Ue-Jil"/>
+                        <outlet property="startBtn" destination="1HA-oa-XED" id="JH8-H6-qJN"/>
                         <segue destination="hhw-qW-8p0" kind="push" id="2ZP-8T-GAm"/>
                     </connections>
                 </viewController>
@@ -109,7 +110,7 @@
                                                     <rect key="frame" x="94" y="0.0" width="211" height="64"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="128" placeholderIntrinsicHeight="128" image="head" id="Pzc-gS-dLH">
@@ -135,7 +136,7 @@
                                                     <rect key="frame" x="54" y="0.0" width="251" height="64"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.40000000596046448" contentMode="scaleToFill" image="home" id="C3o-fm-jpT">
@@ -157,7 +158,7 @@
                                                     <rect key="frame" x="54" y="0.0" width="251" height="64"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.40000000596046448" contentMode="scaleToFill" image="near" id="ggC-rs-ozt">
@@ -183,7 +184,7 @@
                                                     <rect key="frame" x="54" y="0.0" width="251" height="64"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" alpha="0.40000000596046448" contentMode="scaleToFill" image="settings" id="NlP-UZ-12r">
@@ -213,7 +214,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="avatar_thief" width="128" height="128"/>
         <image name="head" width="64" height="64"/>
         <image name="head.png" width="24" height="24"/>
         <image name="home" width="24" height="24"/>

@@ -111,6 +111,7 @@ CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
     } else if(indexPath.row) {
         switch (indexPath.row) {
             case 0:
+                NSLog(@"click table 0");
                 [self login];
                 return;
                 break;
