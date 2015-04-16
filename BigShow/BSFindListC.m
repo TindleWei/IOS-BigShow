@@ -87,17 +87,17 @@
     self.title=@" ";
     self.newid = [[NSUserDefaults standardUserDefaults] objectForKey:@"CacheCourse"];
     
-//    UISwipeGestureRecognizer *swipe=[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
-//    
-//    swipe.direction=UISwipeGestureRecognizerDirectionRight;
-//    
-//    [self.view addGestureRecognizer:swipe];
-//    
-//    swipe=[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
-//    
-//    swipe.direction=UISwipeGestureRecognizerDirectionLeft;
-//    
-//    [self.view addGestureRecognizer:swipe];
+    UISwipeGestureRecognizer *swipe=[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
+    
+    swipe.direction=UISwipeGestureRecognizerDirectionRight;
+    
+    [self.view addGestureRecognizer:swipe];
+    
+    swipe=[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
+    
+    swipe.direction=UISwipeGestureRecognizerDirectionLeft;
+    
+    [self.view addGestureRecognizer:swipe];
     
     self.tableView.backgroundColor=[UIColor clearColor];
     self.tableView.backgroundView=[[UIImageView alloc] initWithImage:[BSTheme bgImage]];
@@ -232,11 +232,10 @@
 -(AVQuery*)getQuery{
     AVQuery *q = [Story query];
     q.cachePolicy = kAVCachePolicyNetworkElseCache;
-    [q orderByAscending:ORDER_BY];
+    [q orderByAscending:@"updatedAt"];
     [q setMaxCacheAge:60*60];
-    [q setLimit:QUERY_LIMIT];
-    [q whereKeyExists:@"pics"];
-    [q whereKey:@"type" equalTo:@(0)];
+    [q setLimit:30];
+    [q whereKeyExists:@"cName"];
     
     if (self.keyword) {
         [q whereKey:@"text" containsString:self.keyword];
@@ -392,10 +391,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIndentifier = @"PostCell0";
+    static NSString *CellIndentifier = @"FindCell0";
     BSFindCell *cell = (id)[tableView dequeueReusableCellWithIdentifier:CellIndentifier];
     
     cell.table=tableView;
+    
+    NSLog(@"%d", [_array count]);
     
     Story *story=self.array[indexPath.row];
     cell.story = story;

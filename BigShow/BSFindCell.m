@@ -87,7 +87,7 @@
 }
 
 - (void)awakeFromNib {
-    self.characterLabel.textColor=[BSTheme textColor];
+//    self.characterLabel.textColor=[BSTheme textColor];
     self.contentLabel.layer.cornerRadius = 4;
     self.characterImage.clipsToBounds = YES;
     self.characterImage.layer.borderWidth = 1;

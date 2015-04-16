@@ -14,7 +14,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "BSMenuC.h"
 #import "BSNavView.h"
-#import "BSFindCell.h"
+#import "BSFindListC.h"
 
 CATransform3D CATransform3DMakePerspective(CGPoint center, float disZ){
     CATransform3D transToCenter = CATransform3DMakeTranslation(-center.x, -center.y, 0);
@@ -125,11 +125,8 @@ CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
                 
             case 2:
             {
-                UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"HomeC"];
+                BSFindListC *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"FindListC"];
                 [nav setViewControllers:@[vc] animated:NO];
-                
-//                BSFindListC *vc2= [self.storyboard instantiateViewControllerWithIdentifier:@"HomeC"];
-//                [nav setViewControllers:@[vc2] animated:NO];
                 break;
             }
                 
