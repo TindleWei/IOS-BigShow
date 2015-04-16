@@ -6,14 +6,15 @@
 //  Copyright (c) 2015年 tindle. All rights reserved.
 //
 
-#import "BSMenuC.h"
 #import <QuartzCore/QuartzCore.h>
 #import <AVOSCloud/AVImageRequestOperation.h>
-#import "BSNavView.h"
 #import <UIViewController+MMDrawerController.h>
 #import <SIAlertView/SIAlertView.h>
 #import <AVOSCloudSNS/AVUser+SNS.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "BSMenuC.h"
+#import "BSNavView.h"
+#import "BSFindCell.h"
 
 CATransform3D CATransform3DMakePerspective(CGPoint center, float disZ){
     CATransform3D transToCenter = CATransform3DMakeTranslation(-center.x, -center.y, 0);
@@ -124,8 +125,11 @@ CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
                 
             case 2:
             {
-//                VZNearC *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"NearC"];
-//                [nav setViewControllers:@[vc] animated:NO];
+                UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"HomeC"];
+                [nav setViewControllers:@[vc] animated:NO];
+                
+//                BSFindListC *vc2= [self.storyboard instantiateViewControllerWithIdentifier:@"HomeC"];
+//                [nav setViewControllers:@[vc2] animated:NO];
                 break;
             }
                 

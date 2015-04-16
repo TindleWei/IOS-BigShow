@@ -9,6 +9,7 @@
 #import "BSFindCell.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "BSProgressView.h"
+#import "BSM.h"
 
 #define avatarFrame CGRectMake(8, 17, 80, 80)
 
@@ -81,8 +82,19 @@
     }
 }
 
+-(void)stopLoadPhoto{
+    
+}
+
 - (void)awakeFromNib {
-    // Initialization code
+    self.characterLabel.textColor=[BSTheme textColor];
+    self.contentLabel.layer.cornerRadius = 4;
+    self.characterImage.clipsToBounds = YES;
+    self.characterImage.layer.borderWidth = 1;
+    self.characterImage.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+    self.storyImage.backgroundColor = [UIColor clearColor];
+    self.characterImage.layer.cornerRadius = 20;
 }
 
 -(void)prepareForReuse{
@@ -92,8 +104,8 @@
 
 -(void)reset{
     if (self.oldFrame) {
-        self.userAvatar.frame=avatarFrame;
-        self.userAvatar.layer.cornerRadius=25;
+        self.characterImage.frame=avatarFrame;
+        self.characterImage.layer.cornerRadius=25;
         
         
         self.oldFrame=nil;

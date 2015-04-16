@@ -395,66 +395,51 @@
     static NSString *CellIndentifier = @"PostCell0";
     BSFindCell *cell = (id)[tableView dequeueReusableCellWithIdentifier:CellIndentifier];
     
-//    cell.table=tableView;
+    cell.table=tableView;
     
     Story *story=self.array[indexPath.row];
+    cell.story = story;
+    cell.characterLabel.text = story.cName;
     
+    NSString *url = [story objectForKey:@"cAvatar"];
+    [cell.characterImage setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"characterImage"]];
     
-    return cell;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    NSString *name = [story objectForKey:@"cName"];
+    cell.characterLabel.text = [NSString stringWithFormat:@"%@", name];
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(BSFindCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (cell.canAnimate) {
+        CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+        
+        scaleAnimation.fromValue = [NSNumber numberWithFloat:0.8];
+        scaleAnimation.toValue = [NSNumber numberWithFloat:1.0];
+        scaleAnimation.duration = .5f;
+        
+        scaleAnimation.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
+        [cell.layer addAnimation:scaleAnimation forKey:@"scale"];
+        
+        cell.canAnimate = NO;
+    }
+    [cell loadPhoto];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Story *story = self.array[indexPath.row];
+    //跳转至详细界面
+    
+    //    self.mm_drawerController.rightDrawerViewController=pc;
+    //
+    //    [self.mm_drawerController openDrawerSide:MMDrawerSideRight animated:YES completion:nil];
+
+//    VZPostViewC *pc=[self.storyboard instantiateViewControllerWithIdentifier:@"PostViewC"];
+//    pc.post=post;
+//    [self.navigationController pushViewController:pc animated:YES];
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
