@@ -404,20 +404,18 @@
     NSLog(@"row: %ld", indexPath.row);
     Story *story=self.array[indexPath.row];
     
-    
     cell.story = story;
     cell.characterLabel.text = [story objectForKey:@"cName"];
     
     NSLog(@"text: %@", cell.characterLabel.text);
     
     NSString *avatarUrl = [story objectForKey:@"cAvatar"];
-    [cell.characterImage setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"characterImage"]];
+    [cell.characterImage setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"head"]];
     
-    NSLog(@"imh: %@", avatarUrl);
-//
+    NSLog(@"img: %@", avatarUrl);
+
 //    NSString *name = [story objectForKey:@"cName"];
 //    cell.characterLabel.text = [NSString stringWithFormat:@"%@", name];
-    
     return cell;
 }
 
