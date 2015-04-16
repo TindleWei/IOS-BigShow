@@ -396,17 +396,17 @@
     
     cell.table=tableView;
     
-    NSLog(@"%d", [_array count]);
+    NSLog(@"%l", [_array count]);
     
     Story *story=self.array[indexPath.row];
-    cell.story = story;
-    cell.characterLabel.text = story.cName;
-    
-    NSString *url = [story objectForKey:@"cAvatar"];
-    [cell.characterImage setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"characterImage"]];
-    
-    NSString *name = [story objectForKey:@"cName"];
-    cell.characterLabel.text = [NSString stringWithFormat:@"%@", name];
+//    cell.story = story;
+//    cell.characterLabel.text = story.cName;
+//    
+//    NSString *url = [story objectForKey:@"cAvatar"];
+//    [cell.characterImage setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"characterImage"]];
+//    
+//    NSString *name = [story objectForKey:@"cName"];
+//    cell.characterLabel.text = [NSString stringWithFormat:@"%@", name];
     
     return cell;
 }
