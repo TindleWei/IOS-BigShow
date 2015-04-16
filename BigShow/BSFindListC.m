@@ -32,8 +32,8 @@
     BOOL isAddNew;
 }
 @property (nonatomic, retain) NSMutableArray *array;
-@property (nonatomic, copy) NSString *newid;
-@property (nonatomic, copy) NSString *lastid;
+@property (nonatomic, copy) NSString *firstStamp;
+@property (nonatomic, copy) NSString *lastStamp;
 @property (nonatomic)UIButton *moreBtn;
 
 @property (nonatomic, retain) BSProgressView *refreshView;
@@ -47,7 +47,7 @@
 
 -(void)setKeyword:(NSString *)keyword{
     _keyword = keyword;
-    self.lastid=self.newid=nil;
+    self.lastStamp=self.firstStamp=nil;
     
     self.array=[NSMutableArray array];
     [self.tableView reloadData];
@@ -85,7 +85,7 @@
     }
     
     self.title=@" ";
-    self.newid = [[NSUserDefaults standardUserDefaults] objectForKey:@"CacheCourse"];
+    self.firstStamp = [[NSUserDefaults standardUserDefaults] objectForKey:@"CacheCourse"];
     
     UISwipeGestureRecognizer *swipe=[[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onSwipe:)];
     
@@ -193,14 +193,14 @@
     }
 }
 
--(void)onGetNewPosts:(NSArray*)objects isMore:(BOOL)isMore{
+-(void)onParseData:(NSArray*)objects isMore:(BOOL)isMore{
     if (objects.count) {
         NSMutableArray *newObjs=[NSMutableArray array];
         NSArray *ids= [self.array valueForKeyPath:@"objectId"];
-        for (AVObject *post in objects) {
-            NSString *pid=post.objectId;
+        for (AVObject *storys in objects) {
+            NSString *pid=storys.objectId;
             if (![ids containsObject:pid]) {
-                [newObjs addObject:post];
+                [newObjs addObject:storys];
             }
         }
         
@@ -210,18 +210,22 @@
         if (isMore) {
             offset=self.array.count;
         }else{
-            [[NSUserDefaults standardUserDefaults] setObject:self.newid forKey:@"CacheCourse"];
-            self.newid=objects[0][ORDER_BY];
+            [[NSUserDefaults standardUserDefaults] setObject:self.firstStamp forKey:@"CacheCourse"];
+            self.firstStamp=objects[0][ORDER_BY];
         }
+        NSLog(@"firstStamp: %@", _firstStamp);
         
         NSIndexSet *iset=[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(offset, objects.count)];
         
+        NSLog(@"offset: %ld", offset);
+        
         [self.array insertObjects:objects atIndexes:iset];
+        
         if(objects.count>=QUERY_LIMIT){
-            self.lastid=[[self.array lastObject][ORDER_BY] copy];
+            self.lastStamp=[[self.array lastObject][ORDER_BY] copy];
             self.moreBtn.hidden=NO;
         }else{
-            self.lastid=nil;
+            self.lastStamp=nil;
             self.moreBtn.hidden=YES;
         }
 
@@ -247,8 +251,8 @@
     [self showRefresh];
     
     AVQuery *q=[self getQuery];
-    if (self.newid) {
-        [q whereKey:ORDER_BY greaterThan:self.newid];
+    if (self.firstStamp) {
+        [q whereKey:ORDER_BY greaterThan:self.firstStamp];
     }
     
     __weak BSFindListC* ws = self;
@@ -273,20 +277,20 @@
             
             [alertView show];
         } else {
-            [ws onGetNewPosts:objects isMore:NO];
+            [ws onParseData:objects isMore:NO];
         }
         [self hideRefreshView];
     }];
 }
 
 -(IBAction)loadMore:(id)sender{
-    if (!self.lastid) {return;};
+    if (!self.lastStamp) {return;};
     
     AVQuery *q = [self getQuery];
     
-    [q whereKey:ORDER_BY lessThan:self.lastid];
+    [q whereKey:ORDER_BY lessThan:self.lastStamp];
     
-    self.lastid=nil;
+    self.lastStamp=nil;
     
     __weak BSFindListC* ws = self;
     [ws.moreBtn setTitle:@"" forState:UIControlStateNormal];
@@ -316,7 +320,7 @@
             
             [alertView show];
         }else{
-            [ws onGetNewPosts:objects isMore:YES];
+            [ws onParseData:objects isMore:YES];
             
             [av removeFromSuperview];
             [ws.moreBtn setTitle:@"更 多" forState:UIControlStateNormal];
@@ -396,15 +400,21 @@
     
     cell.table=tableView;
     
-    NSLog(@"%l", [_array count]);
-    
+    NSLog(@"array count: %ld", [_array count]);
+    NSLog(@"row: %ld", indexPath.row);
     Story *story=self.array[indexPath.row];
-//    cell.story = story;
-//    cell.characterLabel.text = story.cName;
-//    
-//    NSString *url = [story objectForKey:@"cAvatar"];
-//    [cell.characterImage setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"characterImage"]];
-//    
+    
+    
+    cell.story = story;
+    cell.characterLabel.text = [story objectForKey:@"cName"];
+    
+    NSLog(@"text: %@", cell.characterLabel.text);
+    
+    NSString *avatarUrl = [story objectForKey:@"cAvatar"];
+    [cell.characterImage setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"characterImage"]];
+    
+    NSLog(@"imh: %@", avatarUrl);
+//
 //    NSString *name = [story objectForKey:@"cName"];
 //    cell.characterLabel.text = [NSString stringWithFormat:@"%@", name];
     
@@ -431,6 +441,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Story *story = self.array[indexPath.row];
+   
     //跳转至详细界面
     
     //    self.mm_drawerController.rightDrawerViewController=pc;

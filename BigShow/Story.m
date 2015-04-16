@@ -12,4 +12,5 @@
 @implementation Story
 @dynamic title, cName, cAvatar, uid, uName, uAvatar, status, hotScore;
 
+
 @end

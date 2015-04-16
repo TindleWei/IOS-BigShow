@@ -261,9 +261,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="characterImage" destination="kUm-aj-6iD" id="sD8-pA-Msz"/>
-                                    <outlet property="characterLabel" destination="TP6-HY-Te0" id="Wng-xG-UGb"/>
+                                    <outlet property="characterLabel" destination="MgH-c1-jNj" id="JgJ-nY-pkM"/>
                                     <outlet property="container" destination="TP6-HY-Te0" id="CNT-eQ-bqk"/>
-                                    <outlet property="contentLabel" destination="TP6-HY-Te0" id="wjg-ym-Byi"/>
+                                    <outlet property="contentLabel" destination="7as-XH-muZ" id="EKA-R0-9pu"/>
                                     <outlet property="storyImage" destination="bWb-UH-uSJ" id="nGO-tq-Pih"/>
                                 </connections>
                             </tableViewCell>
