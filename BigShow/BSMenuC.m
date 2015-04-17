@@ -108,7 +108,7 @@ CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
     UINavigationController *nav = (id)self.mm_drawerController.centerViewController;
     
     if (indexPath.section==1) {
-        [nav setViewControllers:@[[self.storyboard instantiateViewControllerWithIdentifier:@"SettingC"]] animated:NO];
+        [nav setViewControllers:@[[self.storyboard instantiateViewControllerWithIdentifier:@"SettingsC"]] animated:NO];
     } else if(indexPath.section==0) {
         switch (indexPath.row) {
             case 0:
@@ -132,7 +132,7 @@ CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
                 
             case 3:
             {
-//                VZStatusListC *vc=[[VZStatusListC alloc] initWithStyle:UITableViewStylePlain];
+//                SettingsListController *vc=[[SettingsListController alloc] initWithStyle:UITableViewStylePlain];
 //                [nav setViewControllers:@[vc] animated:NO];
                 break;
             }

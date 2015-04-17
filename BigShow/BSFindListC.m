@@ -15,7 +15,6 @@
 #import <SIAlertView/SIAlertView.h>
 #import "BSNavView.h"
 #import "BSSearchBar.h"
-#import "Story.h"
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -398,20 +397,22 @@
     static NSString *CellIndentifier = @"FindCell0";
     BSFindCell *cell = (id)[tableView dequeueReusableCellWithIdentifier:CellIndentifier];
     
+    if (cell == nil) {
+        cell = [[BSFindCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIndentifier];
+    }
     cell.table=tableView;
     
-    NSLog(@"array count: %ld", [_array count]);
-    NSLog(@"row: %ld", indexPath.row);
-    Story *story=self.array[indexPath.row];
     
+    Story *story=self.array[indexPath.row];
     cell.story = story;
     cell.characterLabel.text = [story objectForKey:@"cName"];
-    
-    NSLog(@"text: %@", cell.characterLabel.text);
-    
+
     NSString *avatarUrl = [story objectForKey:@"cAvatar"];
     [cell.characterImage setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"head"]];
     
+    NSLog(@"array count: %ld", [_array count]);
+    NSLog(@"row: %ld", indexPath.row);
+    NSLog(@"text: %@", cell.characterLabel.text);
     NSLog(@"img: %@", avatarUrl);
 
 //    NSString *name = [story objectForKey:@"cName"];
@@ -437,9 +438,14 @@
     [cell loadPhoto];
 }
 
+-(void)tableView:(UITableView *)tableView didEndDisplayingCell:(BSFindCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    cell.canAnimate=YES;
+    [cell stopLoadPhoto];
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Story *story = self.array[indexPath.row];
-   
+    NSLog(@"img: %@", [story cAvatar]);
     //跳转至详细界面
     
     //    self.mm_drawerController.rightDrawerViewController=pc;

@@ -8,7 +8,7 @@
 
 #import "BSFindCell.h"
 #import <AVOSCloud/AVOSCloud.h>
-#import "BSProgressView.h"
+
 #import "BSM.h"
 
 #define avatarFrame CGRectMake(8, 17, 80, 80)
@@ -65,21 +65,22 @@
 }
 
 -(void)loadPhoto {
-    NSArray *pics=[self.story objectForKey:@"pics"];
-    if (pics) {
-        NSString *url=pics[0];
-        url = [url stringByReplacingOccurrencesOfString:@"thumbnail" withString:@"bmiddle"];
-        [self.storyImage setProgressImageWithUrl:url placeholderImage:[UIImage imageNamed:nil]];
-    }
     
-    int c=pics.count;
-    if (c>1) {
-        self.pageControl.hidden=NO;
-        [self.pageControl setNumberOfPages:pics.count];
-        
-    }else{
-        self.pageControl.hidden=YES;
-    }
+//    NSArray *pics=[self.story objectForKey:@"uAvatar"];
+//    if (pics) {
+//        NSString *url=pics[0];
+//        url = [url stringByReplacingOccurrencesOfString:@"thumbnail" withString:@"bmiddle"];
+//        [self.storyImage setProgressImageWithUrl:url placeholderImage:[UIImage imageNamed:nil]];
+//    }
+//    
+//    int c=pics.count;
+//    if (c>1) {
+//        self.pageControl.hidden=NO;
+//        [self.pageControl setNumberOfPages:pics.count];
+//        
+//    }else{
+//        self.pageControl.hidden=YES;
+//    }
 }
 
 -(void)stopLoadPhoto{
@@ -88,13 +89,13 @@
 
 - (void)awakeFromNib {
 //    self.characterLabel.textColor=[BSTheme textColor];
-    self.contentLabel.layer.cornerRadius = 4;
-    self.characterImage.clipsToBounds = YES;
-    self.characterImage.layer.borderWidth = 1;
-    self.characterImage.layer.borderColor = [UIColor whiteColor].CGColor;
-    
-    self.storyImage.backgroundColor = [UIColor clearColor];
-    self.characterImage.layer.cornerRadius = 20;
+//    self.contentLabel.layer.cornerRadius = 4;
+//    self.characterImage.clipsToBounds = YES;
+//    self.characterImage.layer.borderWidth = 1;
+//    self.characterImage.layer.borderColor = [UIColor whiteColor].CGColor;
+//    
+//    self.storyImage.backgroundColor = [UIColor clearColor];
+//    self.characterImage.layer.cornerRadius = 20;
 }
 
 -(void)prepareForReuse{
@@ -103,13 +104,12 @@
 
 
 -(void)reset{
-    if (self.oldFrame) {
-        self.characterImage.frame=avatarFrame;
-        self.characterImage.layer.cornerRadius=25;
-        
-        
-        self.oldFrame=nil;
-    }
+//    if (self.oldFrame) {
+//        self.characterImage.frame=avatarFrame;
+//        self.characterImage.layer.cornerRadius=25;
+//        
+//        self.oldFrame=nil;
+//    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

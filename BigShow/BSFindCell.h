@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "Story.h"
 
+@interface UIImageView(Progress)
+
+-(void)setProgressImageWithUrl:(NSString*)url placeholderImage:(UIImage*)placeholderImage;
+
+@end
+
+#import "BSProgressView.h"
+
 @interface BSFindCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *storyImage;
 @property (weak, nonatomic) IBOutlet UIImageView *characterImage;
