@@ -87,7 +87,7 @@
     
 }
 
-- (void)awakeFromNib {
+//- (void)awakeFromNib {
 //    self.characterLabel.textColor=[BSTheme textColor];
 //    self.contentLabel.layer.cornerRadius = 4;
 //    self.characterImage.clipsToBounds = YES;
@@ -96,7 +96,7 @@
 //    
 //    self.storyImage.backgroundColor = [UIColor clearColor];
 //    self.characterImage.layer.cornerRadius = 20;
-}
+//}
 
 -(void)prepareForReuse{
     [self reset];

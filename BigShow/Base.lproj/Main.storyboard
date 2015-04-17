@@ -216,25 +216,21 @@
         <!--FindListC-->
         <scene sceneID="CRU-72-RhE">
             <objects>
-                <tableViewController storyboardIdentifier="FindListC" title="FindListC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ktb-5V-Rpd" customClass="BSFindListC" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FindListC" title="FindListC" hidesBottomBarWhenPushed="YES" id="Ktb-5V-Rpd" customClass="BSFindListC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Esh-mS-FVg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationLevel="1" indentationWidth="10" reuseIdentifier="FindCell0" rowHeight="270" id="shv-2A-xt0" customClass="BSFindCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationLevel="1" indentationWidth="10" reuseIdentifier="FindCell" rowHeight="270" id="shv-2A-xt0" customClass="BSFindCell">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="shv-2A-xt0" id="ef3-Xy-MmI">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="shv-2A-xt0" id="ef3-Xy-MmI">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" id="TP6-HY-Te0">
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" id="TP6-HY-Te0">
                                             <rect key="frame" x="0.0" y="0.0" width="960" height="807"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navBg" id="bWb-UH-uSJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="960" height="738"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" id="kUm-aj-6iD">
                                                     <rect key="frame" x="18" y="152" width="80" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -253,10 +249,15 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bWb-UH-uSJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="960" height="738"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -273,6 +274,7 @@
                             <outlet property="delegate" destination="Ktb-5V-Rpd" id="4D6-k0-707"/>
                         </connections>
                     </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTV-tO-wbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -371,6 +373,7 @@
                             <outlet property="delegate" destination="5CQ-5v-7OY" id="GsD-wc-tyf"/>
                         </connections>
                     </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="footer" destination="5hx-i1-ArT" id="yj6-rp-Hgh"/>
                         <outlet property="weiboName" destination="pc7-UZ-rQm" id="CU3-qh-aYq"/>
@@ -385,7 +388,6 @@
         <image name="head" width="64" height="64"/>
         <image name="head.png" width="24" height="24"/>
         <image name="home" width="24" height="24"/>
-        <image name="navBg" width="25" height="44"/>
         <image name="near" width="24" height="24"/>
         <image name="settings" width="24" height="24"/>
     </resources>

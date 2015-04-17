@@ -24,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UIView *container;
 
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+//@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (nonatomic) BOOL canAnimate;
 

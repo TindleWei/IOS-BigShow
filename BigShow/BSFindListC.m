@@ -186,10 +186,10 @@
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
-    if ([keyPath isEqualToString:@"showPostsWithPicsOnly"]) {
-        [self.array removeAllObjects];
-        [self loadNew];
-    }
+//    if ([keyPath isEqualToString:@"showPostsWithPicsOnly"]) {
+//        [self.array removeAllObjects];
+//        [self loadNew];
+//    }
 }
 
 -(void)onParseData:(NSArray*)objects isMore:(BOOL)isMore{
@@ -392,31 +392,35 @@
     return self.array.count;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 280;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIndentifier = @"FindCell0";
-    BSFindCell *cell = (id)[tableView dequeueReusableCellWithIdentifier:CellIndentifier];
-    
+    static NSString *CellIndentifier = @"FindCell";
+    BSFindCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIndentifier];
     if (cell == nil) {
         cell = [[BSFindCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIndentifier];
     }
     cell.table=tableView;
     
+    Story *story=self.array[[indexPath row]];
     
-    Story *story=self.array[indexPath.row];
     cell.story = story;
+    
     cell.characterLabel.text = [story objectForKey:@"cName"];
-
     NSString *avatarUrl = [story objectForKey:@"cAvatar"];
     [cell.characterImage setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"head"]];
     
     NSLog(@"array count: %ld", [_array count]);
     NSLog(@"row: %ld", indexPath.row);
-    NSLog(@"text: %@", cell.characterLabel.text);
+//    NSLog(@"text: %@", cell.story.cName);
     NSLog(@"img: %@", avatarUrl);
 
-//    NSString *name = [story objectForKey:@"cName"];
-//    cell.characterLabel.text = [NSString stringWithFormat:@"%@", name];
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     return cell;
 }
 
@@ -445,16 +449,17 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Story *story = self.array[indexPath.row];
-    NSLog(@"img: %@", [story cAvatar]);
+    NSLog(@"name: %@", [story objectForKey:@"cName"]);
+    
     //跳转至详细界面
     
-    //    self.mm_drawerController.rightDrawerViewController=pc;
-    //
-    //    [self.mm_drawerController openDrawerSide:MMDrawerSideRight animated:YES completion:nil];
+//    self.mm_drawerController.rightDrawerViewController=pc;
+//
+//    [self.mm_drawerController openDrawerSide:MMDrawerSideRight animated:YES completion:nil];
 
 //    VZPostViewC *pc=[self.storyboard instantiateViewControllerWithIdentifier:@"PostViewC"];
 //    pc.post=post;
-//    [self.navigationController pushViewController:pc animated:YES];
+//   [self.navigationController pushViewController:pc animated:YES];
 }
 
 
