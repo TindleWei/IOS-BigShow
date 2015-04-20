@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MBXSegmentControllerExampleViewController : UIViewController
+@interface EditSegmentC : UIViewController
 
 @end

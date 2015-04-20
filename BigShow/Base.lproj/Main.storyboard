@@ -228,7 +228,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" id="TP6-HY-Te0">
-                                            <rect key="frame" x="0.0" y="0.0" width="960" height="807"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1280" height="1076"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" id="kUm-aj-6iD">
@@ -250,7 +250,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bWb-UH-uSJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="960" height="738"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="1280" height="1007"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>

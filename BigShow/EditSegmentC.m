@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Moblox. All rights reserved.
 //
 
-#import "MBXSegmentControllerExampleViewController.h"
+#import "EditSegmentC.h"
 #import "MBXPageViewController.h"
 
-@interface MBXSegmentControllerExampleViewController () <MBXPageControllerDataSource, MBXPageControllerDataDelegate>
+@interface EditSegmentC () <MBXPageControllerDataSource, MBXPageControllerDataDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentController;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @end
 
-@implementation MBXSegmentControllerExampleViewController
+@implementation EditSegmentC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -25,7 +25,7 @@
 		1FA97EE71ACD2C800075130C /* BSM.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EE61ACD2C800075130C /* BSM.m */; };
 		1FE728821AE4AB1200C4F93A /* MBXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7287F1AE4AB1200C4F93A /* MBXTableViewController.m */; };
 		1FE728831AE4AB1200C4F93A /* MBXCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE728811AE4AB1200C4F93A /* MBXCollectionViewController.m */; };
-		1FE728861AE4AB4800C4F93A /* MBXSegmentControllerExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE728851AE4AB4800C4F93A /* MBXSegmentControllerExampleViewController.m */; };
+		1FE728861AE4AB4800C4F93A /* EditSegmentC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE728851AE4AB4800C4F93A /* EditSegmentC.m */; };
 		1FE728891AE4D09B00C4F93A /* MBXPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE728881AE4D09B00C4F93A /* MBXPageViewController.m */; };
 		1FEDCED81ACA65A50034184A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDCED71ACA65A50034184A /* main.m */; };
 		1FEDCEDB1ACA65A50034184A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDCEDA1ACA65A50034184A /* AppDelegate.m */; };
@@ -81,8 +81,8 @@
 		1FE7287F1AE4AB1200C4F93A /* MBXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXTableViewController.m; sourceTree = "<group>"; };
 		1FE728801AE4AB1200C4F93A /* MBXCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXCollectionViewController.h; sourceTree = "<group>"; };
 		1FE728811AE4AB1200C4F93A /* MBXCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXCollectionViewController.m; sourceTree = "<group>"; };
-		1FE728841AE4AB4800C4F93A /* MBXSegmentControllerExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXSegmentControllerExampleViewController.h; sourceTree = "<group>"; };
-		1FE728851AE4AB4800C4F93A /* MBXSegmentControllerExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXSegmentControllerExampleViewController.m; sourceTree = "<group>"; };
+		1FE728841AE4AB4800C4F93A /* EditSegmentC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSegmentC.h; sourceTree = "<group>"; };
+		1FE728851AE4AB4800C4F93A /* EditSegmentC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSegmentC.m; sourceTree = "<group>"; };
 		1FE728871AE4D09B00C4F93A /* MBXPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXPageViewController.h; sourceTree = "<group>"; };
 		1FE728881AE4D09B00C4F93A /* MBXPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXPageViewController.m; sourceTree = "<group>"; };
 		1FEDCED21ACA65A50034184A /* BigShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,8 +151,9 @@
 		1FA97EDE1ACD1F850075130C /* C */ = {
 			isa = PBXGroup;
 			children = (
-				1FE728841AE4AB4800C4F93A /* MBXSegmentControllerExampleViewController.h */,
-				1FE728851AE4AB4800C4F93A /* MBXSegmentControllerExampleViewController.m */,
+				1FE7288A1AE4E1F300C4F93A /* EditController */,
+				1FE728841AE4AB4800C4F93A /* EditSegmentC.h */,
+				1FE728851AE4AB4800C4F93A /* EditSegmentC.m */,
 				1FA97EDF1ACD1FBE0075130C /* BSNavC.h */,
 				1FA97EE01ACD1FBE0075130C /* BSNavC.m */,
 				1FA97EE21ACD2A810075130C /* BSMenuC.h */,
@@ -182,6 +183,13 @@
 				1FE728811AE4AB1200C4F93A /* MBXCollectionViewController.m */,
 			);
 			path = MBXPageController;
+			sourceTree = "<group>";
+		};
+		1FE7288A1AE4E1F300C4F93A /* EditController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = EditController;
 			sourceTree = "<group>";
 		};
 		1FEDCEC91ACA65A50034184A = {
@@ -417,7 +425,7 @@
 				1FEDCEDB1ACA65A50034184A /* AppDelegate.m in Sources */,
 				1F6A07371ACD46D000770754 /* BSProgressView.m in Sources */,
 				1F69C9861AE0DF06006146DB /* WebViewC.m in Sources */,
-				1FE728861AE4AB4800C4F93A /* MBXSegmentControllerExampleViewController.m in Sources */,
+				1FE728861AE4AB4800C4F93A /* EditSegmentC.m in Sources */,
 				1FA97EE71ACD2C800075130C /* BSM.m in Sources */,
 				1FEDCED81ACA65A50034184A /* main.m in Sources */,
 				1FE728831AE4AB1200C4F93A /* MBXCollectionViewController.m in Sources */,
