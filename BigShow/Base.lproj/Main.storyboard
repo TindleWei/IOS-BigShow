@@ -213,27 +213,58 @@
             </objects>
             <point key="canvasLocation" x="-191" y="808"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit FirstC-->
         <scene sceneID="Ubc-8Y-XLC">
             <objects>
-                <viewController storyboardIdentifier="edit_first" id="2qv-2m-da4" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="edit_first" id="2qv-2m-da4" customClass="EditFirstC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="piG-hf-lMT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="title" borderStyle="roundedRect" minimumFontSize="17" id="Zqj-Og-cA8">
+                                <rect key="frame" x="79" y="98" width="174" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="name" borderStyle="roundedRect" minimumFontSize="17" id="DVl-xc-qF1">
+                                <rect key="frame" x="79" y="158" width="174" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="816-I9-GFg">
+                                <rect key="frame" x="79" y="231" width="174" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11013150350000001" green="0.82194942240000002" blue="0.03042525389" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VrT-oG-Riv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-196" y="1463"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit SecondC-->
         <scene sceneID="qaK-pY-PSW">
             <objects>
-                <viewController storyboardIdentifier="edit_second" id="c7o-12-GEb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="edit_second" id="c7o-12-GEb" customClass="EditSecondC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ynm-tT-DkN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="EHr-bT-EsF">
+                                <rect key="frame" x="16" y="20" width="288" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="在这里输入故事的情节..." id="c6t-NE-cIE">
+                                <rect key="frame" x="16" y="264" width="288" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -241,19 +272,48 @@
             </objects>
             <point key="canvasLocation" x="242" y="1469"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="VKj-bv-0gN">
+        <!--Edit Third TableC-->
+        <scene sceneID="RUK-S5-uEf">
             <objects>
-                <viewController storyboardIdentifier="edit_third" id="2H2-0r-61D" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gcF-WW-ok3">
+                <tableViewController storyboardIdentifier="edit_third" id="GTk-N5-jio" customClass="EditThirdTableC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="UFM-8e-8Rw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8KO-53-zqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="question_cell" rowHeight="91" id="lCn-h9-ras">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lCn-h9-ras" id="gtU-UV-Vc1">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="留下你的问题吧..." id="caw-Xq-JwN">
+                                            <rect key="frame" x="8" y="15" width="304" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ends_cell" rowHeight="93" id="yzw-HG-kV8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzw-HG-kV8" id="Aht-VW-zi3">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GTk-N5-jio" id="qW2-pR-2on"/>
+                            <outlet property="delegate" destination="GTk-N5-jio" id="5J2-Wl-Nsq"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B2k-V8-f2f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="686" y="1469"/>
+            <point key="canvasLocation" x="681" y="1463"/>
         </scene>
         <!--FindListC-->
         <scene sceneID="CRU-72-RhE">

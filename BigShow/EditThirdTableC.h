@@ -1,5 +1,5 @@
 //
-//  EditThirdC.h
+//  EditThirdTableC.h
 //  BigShow
 //
 //  Created by tindle on 15/4/20.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditThirdC : UIViewController
+@interface EditThirdTableC : UITableViewController
 
 @end

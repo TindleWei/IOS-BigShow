@@ -29,7 +29,7 @@
 		1FE728891AE4D09B00C4F93A /* MBXPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE728881AE4D09B00C4F93A /* MBXPageViewController.m */; };
 		1FE7288D1AE4E57D00C4F93A /* EditFirstC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7288C1AE4E57D00C4F93A /* EditFirstC.m */; };
 		1FE728901AE4E59300C4F93A /* EditSecondC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7288F1AE4E59300C4F93A /* EditSecondC.m */; };
-		1FE728931AE4E5DF00C4F93A /* EditThirdC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE728921AE4E5DF00C4F93A /* EditThirdC.m */; };
+		1FE728961AE4F10A00C4F93A /* EditThirdTableC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE728951AE4F10A00C4F93A /* EditThirdTableC.m */; };
 		1FEDCED81ACA65A50034184A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDCED71ACA65A50034184A /* main.m */; };
 		1FEDCEDB1ACA65A50034184A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDCEDA1ACA65A50034184A /* AppDelegate.m */; };
 		1FEDCEE11ACA65A50034184A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FEDCEDF1ACA65A50034184A /* Main.storyboard */; };
@@ -92,8 +92,8 @@
 		1FE7288C1AE4E57D00C4F93A /* EditFirstC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFirstC.m; sourceTree = "<group>"; };
 		1FE7288E1AE4E59300C4F93A /* EditSecondC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSecondC.h; sourceTree = "<group>"; };
 		1FE7288F1AE4E59300C4F93A /* EditSecondC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSecondC.m; sourceTree = "<group>"; };
-		1FE728911AE4E5DF00C4F93A /* EditThirdC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditThirdC.h; sourceTree = "<group>"; };
-		1FE728921AE4E5DF00C4F93A /* EditThirdC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditThirdC.m; sourceTree = "<group>"; };
+		1FE728941AE4F10A00C4F93A /* EditThirdTableC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditThirdTableC.h; sourceTree = "<group>"; };
+		1FE728951AE4F10A00C4F93A /* EditThirdTableC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditThirdTableC.m; sourceTree = "<group>"; };
 		1FEDCED21ACA65A50034184A /* BigShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEDCED61ACA65A50034184A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FEDCED71ACA65A50034184A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -201,8 +201,8 @@
 				1FE7288C1AE4E57D00C4F93A /* EditFirstC.m */,
 				1FE7288E1AE4E59300C4F93A /* EditSecondC.h */,
 				1FE7288F1AE4E59300C4F93A /* EditSecondC.m */,
-				1FE728911AE4E5DF00C4F93A /* EditThirdC.h */,
-				1FE728921AE4E5DF00C4F93A /* EditThirdC.m */,
+				1FE728941AE4F10A00C4F93A /* EditThirdTableC.h */,
+				1FE728951AE4F10A00C4F93A /* EditThirdTableC.m */,
 			);
 			name = EditController;
 			sourceTree = "<group>";
@@ -432,12 +432,12 @@
 			files = (
 				1FA97EE11ACD1FBE0075130C /* BSNavC.m in Sources */,
 				1FE728821AE4AB1200C4F93A /* MBXTableViewController.m in Sources */,
+				1FE728961AE4F10A00C4F93A /* EditThirdTableC.m in Sources */,
 				1FE728891AE4D09B00C4F93A /* MBXPageViewController.m in Sources */,
 				1F6A07341ACD43BB00770754 /* BSNavView.m in Sources */,
 				1FE7288D1AE4E57D00C4F93A /* EditFirstC.m in Sources */,
 				1FE728901AE4E59300C4F93A /* EditSecondC.m in Sources */,
 				1F6A073A1ACD470600770754 /* BSStacView.m in Sources */,
-				1FE728931AE4E5DF00C4F93A /* EditThirdC.m in Sources */,
 				1F6E1B131AD3BCD7003787D6 /* Story.m in Sources */,
 				1F6E1B191AD3C85C003787D6 /* BSFindCell.m in Sources */,
 				1FEDCEDB1ACA65A50034184A /* AppDelegate.m in Sources */,
