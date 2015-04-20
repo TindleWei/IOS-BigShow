@@ -413,7 +413,7 @@
     
     cell.characterLabel.text = [story objectForKey:@"cName"];
     NSString *avatarUrl = [story objectForKey:@"cAvatar"];
-    [cell.characterImage setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"head"]];
+    [cell.characterImage sd_setImageWithURL:[NSURL URLWithString:avatarUrl] placeholderImage:[UIImage imageNamed:@"head"]];
     
     NSLog(@"array count: %ld", [_array count]);
     NSLog(@"row: %ld", indexPath.row);
