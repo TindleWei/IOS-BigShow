@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditFirstC : UIViewController<UITextFieldDelegate>
+@interface EditFirstC : UIViewController
 
 @end

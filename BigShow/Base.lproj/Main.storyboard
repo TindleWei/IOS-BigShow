@@ -270,20 +270,25 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" id="816-I9-GFg">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" id="816-I9-GFg">
                                 <rect key="frame" x="73" y="48" width="174" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="L0G-82-eLV" appends="YES" id="Yn6-dv-TYc"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.11013150350000001" green="0.82194942240000002" blue="0.03042525389" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="avatarText" destination="816-I9-GFg" id="8QJ-fj-SCt"/>
+                        <outlet property="avatarImage" destination="816-I9-GFg" id="bab-pv-4nm"/>
                         <outlet property="nameText" destination="DVl-xc-qF1" id="VPT-VS-Wxk"/>
                         <outlet property="titleText" destination="Zqj-Og-cA8" id="7CF-x2-uFx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VrT-oG-Riv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="L0G-82-eLV"/>
             </objects>
             <point key="canvasLocation" x="-191" y="2109"/>
         </scene>

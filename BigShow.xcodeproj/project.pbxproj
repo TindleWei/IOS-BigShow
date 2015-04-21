@@ -28,6 +28,9 @@
 		1FE728901AE4E59300C4F93A /* EditSecondC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7288F1AE4E59300C4F93A /* EditSecondC.m */; };
 		1FE728961AE4F10A00C4F93A /* EditThirdTableC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE728951AE4F10A00C4F93A /* EditThirdTableC.m */; };
 		1FE728991AE4F39300C4F93A /* MBXPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE728981AE4F39300C4F93A /* MBXPageViewController.m */; };
+		1FE728A31AE6329700C4F93A /* PhotoTweaksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7289E1AE6329700C4F93A /* PhotoTweaksViewController.m */; };
+		1FE728A41AE6329700C4F93A /* PhotoTweakView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE728A01AE6329700C4F93A /* PhotoTweakView.m */; };
+		1FE728A51AE6329700C4F93A /* UIColor+Tweak.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE728A21AE6329700C4F93A /* UIColor+Tweak.m */; };
 		1FEDCED81ACA65A50034184A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDCED71ACA65A50034184A /* main.m */; };
 		1FEDCEDB1ACA65A50034184A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDCEDA1ACA65A50034184A /* AppDelegate.m */; };
 		1FEDCEE11ACA65A50034184A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FEDCEDF1ACA65A50034184A /* Main.storyboard */; };
@@ -88,6 +91,12 @@
 		1FE728951AE4F10A00C4F93A /* EditThirdTableC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditThirdTableC.m; sourceTree = "<group>"; };
 		1FE728971AE4F39300C4F93A /* MBXPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXPageViewController.h; sourceTree = "<group>"; };
 		1FE728981AE4F39300C4F93A /* MBXPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXPageViewController.m; sourceTree = "<group>"; };
+		1FE7289D1AE6329700C4F93A /* PhotoTweaksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTweaksViewController.h; sourceTree = "<group>"; };
+		1FE7289E1AE6329700C4F93A /* PhotoTweaksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTweaksViewController.m; sourceTree = "<group>"; };
+		1FE7289F1AE6329700C4F93A /* PhotoTweakView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoTweakView.h; sourceTree = "<group>"; };
+		1FE728A01AE6329700C4F93A /* PhotoTweakView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoTweakView.m; sourceTree = "<group>"; };
+		1FE728A11AE6329700C4F93A /* UIColor+Tweak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tweak.h"; sourceTree = "<group>"; };
+		1FE728A21AE6329700C4F93A /* UIColor+Tweak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tweak.m"; sourceTree = "<group>"; };
 		1FEDCED21ACA65A50034184A /* BigShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FEDCED61ACA65A50034184A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FEDCED71ACA65A50034184A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -197,6 +206,19 @@
 			name = EditController;
 			sourceTree = "<group>";
 		};
+		1FE7289C1AE6328800C4F93A /* PhotoTweaks */ = {
+			isa = PBXGroup;
+			children = (
+				1FE7289D1AE6329700C4F93A /* PhotoTweaksViewController.h */,
+				1FE7289E1AE6329700C4F93A /* PhotoTweaksViewController.m */,
+				1FE7289F1AE6329700C4F93A /* PhotoTweakView.h */,
+				1FE728A01AE6329700C4F93A /* PhotoTweakView.m */,
+				1FE728A11AE6329700C4F93A /* UIColor+Tweak.h */,
+				1FE728A21AE6329700C4F93A /* UIColor+Tweak.m */,
+			);
+			path = PhotoTweaks;
+			sourceTree = "<group>";
+		};
 		1FEDCEC91ACA65A50034184A = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +242,7 @@
 		1FEDCED41ACA65A50034184A /* BigShow */ = {
 			isa = PBXGroup;
 			children = (
+				1FE7289C1AE6328800C4F93A /* PhotoTweaks */,
 				1FE7287D1AE4AAF200C4F93A /* MBXPageController */,
 				1FA97EDD1ACD1F810075130C /* V */,
 				1FA97EDC1ACD1F690075130C /* M */,
@@ -420,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FE728A51AE6329700C4F93A /* UIColor+Tweak.m in Sources */,
 				1FA97EE11ACD1FBE0075130C /* BSNavC.m in Sources */,
 				1FE728961AE4F10A00C4F93A /* EditThirdTableC.m in Sources */,
 				1F6A07341ACD43BB00770754 /* BSNavView.m in Sources */,
@@ -430,6 +454,7 @@
 				1F6E1B191AD3C85C003787D6 /* BSFindCell.m in Sources */,
 				1FEDCEDB1ACA65A50034184A /* AppDelegate.m in Sources */,
 				1F6A07371ACD46D000770754 /* BSProgressView.m in Sources */,
+				1FE728A31AE6329700C4F93A /* PhotoTweaksViewController.m in Sources */,
 				1F69C9861AE0DF06006146DB /* WebViewC.m in Sources */,
 				1FE728861AE4AB4800C4F93A /* EditSegmentC.m in Sources */,
 				1FA97EE71ACD2C800075130C /* BSM.m in Sources */,
@@ -437,6 +462,7 @@
 				1F1CD5511ACE6F4500DF5186 /* BSHomeC.m in Sources */,
 				1FA97EE41ACD2A810075130C /* BSMenuC.m in Sources */,
 				1F6A073D1ACD47CC00770754 /* BSSearchBar.m in Sources */,
+				1FE728A41AE6329700C4F93A /* PhotoTweakView.m in Sources */,
 				1F69C9831AE0DCE0006146DB /* SettingsC.m in Sources */,
 				1F6E1B101AD3B4DE003787D6 /* BSFindListC.m in Sources */,
 				1FE728991AE4F39300C4F93A /* MBXPageViewController.m in Sources */,
