@@ -83,14 +83,16 @@
     [picker pushViewController:photoTweaksViewController animated:YES];
 }
 
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+    NSLog(@"图片 imagePickerControllerDidCancel");
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)finishWithCroppedImage:(UIImage *)croppedImage{
-    NSLog(@"图片 finishWithCroppedImage");
+- (void)photoTweaksController:(PhotoTweaksViewController *)controller didFinishWithCroppedImage:(UIImage *)croppedImage{
+    NSLog(@"图片 photoTweaksController");
     self.avatarImage.image = croppedImage;
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 @end
