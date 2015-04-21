@@ -10,7 +10,7 @@
 #import "PhotoTweaksViewController.h"
 
 @interface EditFirstC() <UITextFieldDelegate, UIImagePickerControllerDelegate,
-    UINavigationControllerDelegate, PhotoTweaksViewControllerDelegate>
+    UINavigationControllerDelegate, PhotoTweaksViewControllerDelegate, UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleText;
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
@@ -25,21 +25,9 @@
     self.nameText.delegate = self;
     
     //Image点击监听
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickImage2)];
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showSheet:)];
     [self.avatarImage addGestureRecognizer:singleTap];
 
-}
-
--(void)onClickImage2{
-    NSLog(@"图片被点击");
-    
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    picker.delegate = self;
-    picker.allowsEditing = NO;
-    picker.navigationBarHidden = YES;
-    
-    [self presentViewController:picker animated:YES completion:nil];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
@@ -94,5 +82,36 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+- (IBAction)showSheet:(id)sender {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:nil
+                                  delegate:self
+                                  cancelButtonTitle:@"取消"
+                                  destructiveButtonTitle:@"从相册中选取"
+                                  otherButtonTitles:@"从网格中选取",nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+    [actionSheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        NSLog(@"从相册中选取");
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.delegate = self;
+        picker.allowsEditing = NO;
+        picker.navigationBarHidden = YES;
+        
+        [self presentViewController:picker animated:YES completion:nil];
+        
+    }else if (buttonIndex == 1) {
+        NSLog(@"从网格中选取");
+    }else if(buttonIndex == 2) {
+        NSLog(@"取消选取");
+    }    
+}
+
 
 @end
