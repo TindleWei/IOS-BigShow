@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1CB9701AE677150007E52D /* PhotoCollectionC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1CB96F1AE677150007E52D /* PhotoCollectionC.m */; };
 		1F1CD5511ACE6F4500DF5186 /* BSHomeC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F1CD5501ACE6F4500DF5186 /* BSHomeC.m */; };
 		1F69C9831AE0DCE0006146DB /* SettingsC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F69C9821AE0DCE0006146DB /* SettingsC.m */; };
 		1F69C9861AE0DF06006146DB /* WebViewC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F69C9851AE0DF06006146DB /* WebViewC.m */; };
@@ -52,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		17EF0BD8910FE921C0CD83C4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1CB96E1AE677150007E52D /* PhotoCollectionC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionC.h; sourceTree = "<group>"; };
+		1F1CB96F1AE677150007E52D /* PhotoCollectionC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionC.m; sourceTree = "<group>"; };
 		1F1CD54F1ACE6F4500DF5186 /* BSHomeC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHomeC.h; sourceTree = "<group>"; };
 		1F1CD5501ACE6F4500DF5186 /* BSHomeC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHomeC.m; sourceTree = "<group>"; };
 		1F69C9811AE0DCE0006146DB /* SettingsC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsC.h; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 		1FE7288A1AE4E1F300C4F93A /* EditController */ = {
 			isa = PBXGroup;
 			children = (
+				1F1CB96E1AE677150007E52D /* PhotoCollectionC.h */,
+				1F1CB96F1AE677150007E52D /* PhotoCollectionC.m */,
 				1FE7288B1AE4E57D00C4F93A /* EditFirstC.h */,
 				1FE7288C1AE4E57D00C4F93A /* EditFirstC.m */,
 				1FE7288E1AE4E59300C4F93A /* EditSecondC.h */,
@@ -457,6 +462,7 @@
 				1FE728A31AE6329700C4F93A /* PhotoTweaksViewController.m in Sources */,
 				1F69C9861AE0DF06006146DB /* WebViewC.m in Sources */,
 				1FE728861AE4AB4800C4F93A /* EditSegmentC.m in Sources */,
+				1F1CB9701AE677150007E52D /* PhotoCollectionC.m in Sources */,
 				1FA97EE71ACD2C800075130C /* BSM.m in Sources */,
 				1FEDCED81ACA65A50034184A /* main.m in Sources */,
 				1F1CD5511ACE6F4500DF5186 /* BSHomeC.m in Sources */,
