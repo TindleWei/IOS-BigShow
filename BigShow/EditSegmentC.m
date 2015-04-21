@@ -49,15 +49,6 @@
     UIViewController *demo2  = [mainStoryboard instantiateViewControllerWithIdentifier:@"edit_second"];
     UIViewController *demo3 = [mainStoryboard instantiateViewControllerWithIdentifier:@"edit_third"];
     
-//    // Or create it programatically
-//    UIViewController *demo4 = [[UIViewController alloc] init];
-//    demo4.view.backgroundColor = [UIColor orangeColor];
-//    
-//    UILabel *fromLabel = [[UILabel alloc]initWithFrame:CGRectMake( (self.view.frame.size.width - 130)/2 , 40, 130, 40)];
-//    fromLabel.text = @"Fourth Controller";
-//    
-//    [demo4.view addSubview:fromLabel];
-    
     // The order matters.
     return @[demo,demo2, demo3];
 }
