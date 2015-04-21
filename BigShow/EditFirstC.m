@@ -44,9 +44,24 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-//    [UIView animateWithDuration:0.3 animations:^{
-//        self.view.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
-//    }];
+    CGRect frame = textField.frame;
+    //键盘高度是216 还有一个80是自己设的
+    int offset = frame.origin.y + 80 - (self.view.frame.size.height - 216.0);
+    NSTimeInterval animationDuration = 0.3f;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    if (offset>0){
+        self.view.frame = CGRectMake(0.0f, -offset, self.view.frame.size.width,
+                                     self.view.frame.size.height);
+    }
+    
+    [UIView commitAnimations];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    //输入框编辑完成以后，将视图恢复到原始状态
+    self.view.frame =CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField{
