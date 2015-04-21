@@ -30,6 +30,8 @@
 
 }
 
+#pragma mark - 软键盘操作
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     CGRect frame = textField.frame;
@@ -62,8 +64,13 @@
     return YES;
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
+#pragma mark - 图片剪裁
+
+/**
+ 进入PhotoTweaks剪裁图片
+ */
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     PhotoTweaksViewController *photoTweaksViewController = [[PhotoTweaksViewController alloc] initWithImage:image];
     photoTweaksViewController.delegate = self;
@@ -72,16 +79,16 @@
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
-    NSLog(@"图片 imagePickerControllerDidCancel");
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)photoTweaksController:(PhotoTweaksViewController *)controller didFinishWithCroppedImage:(UIImage *)croppedImage{
-    NSLog(@"图片 photoTweaksController");
     self.avatarImage.image = croppedImage;
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
+#pragma mark - ActionSheet选项
 
 - (IBAction)showSheet:(id)sender {
     UIActionSheet *actionSheet = [[UIActionSheet alloc]
@@ -108,9 +115,10 @@
         
     }else if (buttonIndex == 1) {
         NSLog(@"从网格中选取");
+        
     }else if(buttonIndex == 2) {
         NSLog(@"取消选取");
-    }    
+    }
 }
 
 
