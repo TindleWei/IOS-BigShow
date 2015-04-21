@@ -45,21 +45,18 @@
     // You can Load a VC directly from Storyboard
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    UIViewController *demo  = [mainStoryboard instantiateViewControllerWithIdentifier:@"firstController"];
-    UIViewController *demo2  = [mainStoryboard instantiateViewControllerWithIdentifier:@"secondController"];
+    UIViewController *demo  = [mainStoryboard instantiateViewControllerWithIdentifier:@"edit_first"];
+    UIViewController *demo2  = [mainStoryboard instantiateViewControllerWithIdentifier:@"edit_second"];
+    UIViewController *demo3 = [mainStoryboard instantiateViewControllerWithIdentifier:@"edit_third"];
     
-    // Or Load it from a xib file
-    UIViewController *demo3 = [UIViewController new];
-    demo3.view = [[[NSBundle mainBundle] loadNibNamed:@"View" owner:self options:nil] objectAtIndex:0];
-    
-    // Or create it programatically
-    UIViewController *demo4 = [[UIViewController alloc] init];
-    demo4.view.backgroundColor = [UIColor orangeColor];
-    
-    UILabel *fromLabel = [[UILabel alloc]initWithFrame:CGRectMake( (self.view.frame.size.width - 130)/2 , 40, 130, 40)];
-    fromLabel.text = @"Fourth Controller";
-    
-    [demo4.view addSubview:fromLabel];
+//    // Or create it programatically
+//    UIViewController *demo4 = [[UIViewController alloc] init];
+//    demo4.view.backgroundColor = [UIColor orangeColor];
+//    
+//    UILabel *fromLabel = [[UILabel alloc]initWithFrame:CGRectMake( (self.view.frame.size.width - 130)/2 , 40, 130, 40)];
+//    fromLabel.text = @"Fourth Controller";
+//    
+//    [demo4.view addSubview:fromLabel];
     
     // The order matters.
     return @[demo,demo2, demo3];

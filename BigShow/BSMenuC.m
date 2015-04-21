@@ -15,6 +15,7 @@
 #import "BSMenuC.h"
 #import "BSNavView.h"
 #import "BSFindListC.h"
+#import "EditSegmentC.h"
 
 CATransform3D CATransform3DMakePerspective(CGPoint center, float disZ){
     CATransform3D transToCenter = CATransform3DMakeTranslation(-center.x, -center.y, 0);
@@ -118,7 +119,7 @@ CATransform3D CATransform3DPerspect(CATransform3D t, CGPoint center, float disZ)
                 
             case 1:
             {
-                UIViewController *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"HomeC"];
+                EditSegmentC *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"EditC"];
                 [nav setViewControllers:@[vc] animated:NO];
             }
                 break;
