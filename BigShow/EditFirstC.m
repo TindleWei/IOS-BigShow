@@ -8,12 +8,18 @@
 
 #import "EditFirstC.h"
 #import "PhotoTweaksViewController.h"
+#import "PhotoCollectionC.h"
+#import "PassValueDelegate.h"
 
 @interface EditFirstC() <UITextFieldDelegate, UIImagePickerControllerDelegate,
-    UINavigationControllerDelegate, PhotoTweaksViewControllerDelegate, UIActionSheetDelegate>
+    UINavigationControllerDelegate, UIActionSheetDelegate,
+    PhotoTweaksViewControllerDelegate,  PassValueDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleText;
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
+
+//图片的传值
+@property (nonatomic, copy) NSString* imagePath;
 
 @end
 
@@ -115,10 +121,22 @@
         
     }else if (buttonIndex == 1) {
         NSLog(@"从网格中选取");
+        PhotoCollectionC *vc= [self.storyboard instantiateViewControllerWithIdentifier:@"PhotoCollectionC"];
+        //设置第二个界面的中的delegate为第一个j界面self
+        vc.delegate = self;
+        [self.navigationController pushViewController:vc animated:YES];
         
     }else if(buttonIndex == 2) {
         NSLog(@"取消选取");
     }
+}
+/**
+ 暂时只传image，也可以穿对象
+ */
+
+-(void)passValue:(NSString *)value{
+    self.imagePath = value;
+    self.avatarImage.image = [UIImage imageNamed: self.imagePath];
 }
 
 @end

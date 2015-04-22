@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PassValueDelegate.h"
 
-@interface PhotoCollectionC : UICollectionViewController
+@interface PhotoCollectionC : UIViewController
+
+//这里用assign而不用retain是为了防止引起循环引用。
+@property(nonatomic,assign) NSObject<PassValueDelegate> *delegate;
 
 @end

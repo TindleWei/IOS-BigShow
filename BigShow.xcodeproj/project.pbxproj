@@ -57,6 +57,7 @@
 		1F1CB96F1AE677150007E52D /* PhotoCollectionC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionC.m; sourceTree = "<group>"; };
 		1F1CD54F1ACE6F4500DF5186 /* BSHomeC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHomeC.h; sourceTree = "<group>"; };
 		1F1CD5501ACE6F4500DF5186 /* BSHomeC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHomeC.m; sourceTree = "<group>"; };
+		1F3A603C1AE77C6200C4B3B6 /* PassValueDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PassValueDelegate.h; sourceTree = "<group>"; };
 		1F69C9811AE0DCE0006146DB /* SettingsC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsC.h; sourceTree = "<group>"; };
 		1F69C9821AE0DCE0006146DB /* SettingsC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsC.m; sourceTree = "<group>"; };
 		1F69C9841AE0DF06006146DB /* WebViewC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewC.h; sourceTree = "<group>"; };
@@ -201,6 +202,7 @@
 			children = (
 				1F1CB96E1AE677150007E52D /* PhotoCollectionC.h */,
 				1F1CB96F1AE677150007E52D /* PhotoCollectionC.m */,
+				1F3A603C1AE77C6200C4B3B6 /* PassValueDelegate.h */,
 				1FE7288B1AE4E57D00C4F93A /* EditFirstC.h */,
 				1FE7288C1AE4E57D00C4F93A /* EditFirstC.m */,
 				1FE7288E1AE4E59300C4F93A /* EditSecondC.h */,
