@@ -25,7 +25,7 @@ UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>{
     [super viewDidLoad];
     
     NSArray *images = [NSArray arrayWithObjects:@"apple.png", @"apple.png", @"apple.png", @"apple.png", @"apple.png", nil];
-    NSArray *images2 = [NSArray arrayWithObjects:@"apple.png", @"apple.png", @"apple.png", @"apple.png", @"apple.png", nil];
+    NSArray *images2 = [NSArray arrayWithObjects:@"cap.png", @"cap.png", @"cap.png", @"cap.png", @"cap.png", nil];
     recipeImages = [NSArray arrayWithObjects:images, images2, nil];
     
     [self.collectionView setDelegate:self];

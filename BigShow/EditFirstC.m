@@ -38,6 +38,13 @@
 
 #pragma mark - 软键盘操作
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    //随便点击空白处 隐藏键盘
+    [self.titleText resignFirstResponder];
+    [self.nameText resignFirstResponder];
+}
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     CGRect frame = textField.frame;
