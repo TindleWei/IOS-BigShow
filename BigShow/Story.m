@@ -10,7 +10,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 
 @implementation Story
-//@dynamic title, cName, cAvatar, uid, uName, uAvatar, status, hotScore;
+@dynamic storyTitle, storyName, storyAvatar, userId, userName, userAvatar, isCompleted, hotScore;
 
 
 @end

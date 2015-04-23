@@ -11,20 +11,20 @@
 
 @interface Story : AVObject<AVSubclassing>
 
-@property(nonatomic, copy) NSString *title;
+@property(nonatomic, copy) NSString *storyTitle;
 
-@property(nonatomic, copy) NSString *cName;
+@property(nonatomic, copy) NSString *storyName;
 
-@property(nonatomic, copy) NSString *cAvatar;
+@property(nonatomic, copy) NSString *storyAvatar;
 
-@property(nonatomic, copy) NSString *uid;
+@property(nonatomic, copy) NSString *userId;
 
-@property(nonatomic, copy) NSString *uName;
+@property(nonatomic, copy) NSString *userName;
 
-@property(nonatomic, copy) NSString *uAvatar;
+@property(nonatomic, copy) NSString *userAvatar;
 
-@property(nonatomic, copy) NSString *status;
+@property(nonatomic, copy) NSString *isCompleted;
 
-@property(nonatomic, copy) NSString *hotScore;
+@property(nonatomic, assign) NSInteger *hotScore;
 
 @end

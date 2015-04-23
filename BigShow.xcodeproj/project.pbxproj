@@ -20,6 +20,7 @@
 		1F6E1B191AD3C85C003787D6 /* BSFindCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E1B181AD3C85C003787D6 /* BSFindCell.m */; };
 		1F7066681AE8C26200649709 /* EndsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F7066671AE8C26200649709 /* EndsTableCell.m */; };
 		1F70666B1AE8C2E200649709 /* End.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F70666A1AE8C2E200649709 /* End.m */; };
+		1F70666E1AE8DE4200649709 /* Slot.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F70666D1AE8DE4200649709 /* Slot.m */; };
 		1FA97ED71ACD1DB90075130C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA97ED61ACD1DB90075130C /* CoreGraphics.framework */; };
 		1FA97ED91ACD1DCC0075130C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA97ED81ACD1DCC0075130C /* UIKit.framework */; };
 		1FA97EDB1ACD1DD50075130C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA97EDA1ACD1DD50075130C /* Foundation.framework */; };
@@ -82,6 +83,8 @@
 		1F7066671AE8C26200649709 /* EndsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndsTableCell.m; sourceTree = "<group>"; };
 		1F7066691AE8C2E200649709 /* End.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = End.h; sourceTree = "<group>"; };
 		1F70666A1AE8C2E200649709 /* End.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = End.m; sourceTree = "<group>"; };
+		1F70666C1AE8DE4200649709 /* Slot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slot.h; sourceTree = "<group>"; };
+		1F70666D1AE8DE4200649709 /* Slot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Slot.m; sourceTree = "<group>"; };
 		1FA97ED61ACD1DB90075130C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1FA97ED81ACD1DCC0075130C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1FA97EDA1ACD1DD50075130C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -151,6 +154,8 @@
 				1FA97EE61ACD2C800075130C /* BSM.m */,
 				1F6E1B111AD3BCD7003787D6 /* Story.h */,
 				1F6E1B121AD3BCD7003787D6 /* Story.m */,
+				1F70666C1AE8DE4200649709 /* Slot.h */,
+				1F70666D1AE8DE4200649709 /* Slot.m */,
 				1F7066691AE8C2E200649709 /* End.h */,
 				1F70666A1AE8C2E200649709 /* End.m */,
 			);
@@ -469,6 +474,7 @@
 				1F6A073A1ACD470600770754 /* BSStacView.m in Sources */,
 				1F6E1B131AD3BCD7003787D6 /* Story.m in Sources */,
 				1F6E1B191AD3C85C003787D6 /* BSFindCell.m in Sources */,
+				1F70666E1AE8DE4200649709 /* Slot.m in Sources */,
 				1F70666B1AE8C2E200649709 /* End.m in Sources */,
 				1FEDCEDB1ACA65A50034184A /* AppDelegate.m in Sources */,
 				1F6A07371ACD46D000770754 /* BSProgressView.m in Sources */,
