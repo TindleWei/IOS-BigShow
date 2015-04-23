@@ -54,7 +54,6 @@
 }
 
 
-
 #pragma mark - MBXPageViewController Delegate
 
 - (void)MBXPageChangedToIndex:(NSInteger)index
