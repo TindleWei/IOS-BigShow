@@ -4,4 +4,5 @@ pod 'AVOSCloudSNS'
 pod 'SIAlertView'
 pod 'SDWebImage'
 pod 'MMDrawerController'
+pod 'FMDB'
 

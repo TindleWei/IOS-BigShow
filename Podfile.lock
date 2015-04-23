@@ -2,6 +2,11 @@ PODS:
   - AVOSCloud (3.0.2)
   - AVOSCloudSNS (3.0.2):
     - AVOSCloud
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
     - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
@@ -22,6 +27,7 @@ PODS:
 DEPENDENCIES:
   - AVOSCloud
   - AVOSCloudSNS
+  - FMDB
   - MMDrawerController
   - SDWebImage
   - SIAlertView
@@ -29,6 +35,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AVOSCloud: eeacd471d18b3e24c3cb0d089110453261084489
   AVOSCloudSNS: 7d83ffbd3738b92c9ece62e93a65fa593587274b
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   SIAlertView: 20c794b55eaf44d888773ea51647cf8907723919
