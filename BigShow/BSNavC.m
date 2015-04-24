@@ -31,6 +31,8 @@
     
     UIViewController *vc = self.viewControllers[0];
     vc.navigationItem.leftBarButtonItem=self.menuItem;
+    
+//    vc.navigationController.navigationBar.backgroundColor = [UIColor redColor];
 }
 
 -(void)menu:(id)sender{

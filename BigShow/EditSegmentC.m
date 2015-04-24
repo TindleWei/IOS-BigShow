@@ -8,10 +8,14 @@
 
 #import "EditSegmentC.h"
 #import "MBXPageViewController.h"
+#import "BSProgressView.h"
 
 @interface EditSegmentC () <MBXPageControllerDataSource, MBXPageControllerDataDelegate>
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentController;
 @property (weak, nonatomic) IBOutlet UIView *containerView;
+
+@property (nonatomic,retain) BSProgressView *refreshView;
 
 @end
 
@@ -26,6 +30,25 @@
     MBXPageController.MBXDataDelegate = self;
     MBXPageController.pageMode = MBX_SegmentController;
     [MBXPageController reloadPages];
+    
+    self.title = @"EditSegment";
+    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:108.f/255.f green:105.f/255.f blue:164.f/255.f alpha:1.0];
+    
+    [self initSaveBtn];
+    
+}
+
+-(void)initSaveBtn{
+    UIButton *searchBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+    searchBtn.frame=CGRectMake(0, 0, 44, 44);
+    [searchBtn setImage:[UIImage imageNamed:@"side_button"] forState:UIControlStateNormal];
+    [searchBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [searchBtn addTarget:self action:@selector(onSaveBtn:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:searchBtn];
+}
+
+-(void)onSaveBtn:(UIButton*)btn{
+    NSLog(@"onSaveBtn");
 }
 
 #pragma mark - MBXPageViewController Data Source
@@ -58,7 +81,7 @@
 
 - (void)MBXPageChangedToIndex:(NSInteger)index
 {
-    NSLog(@"%@ %ld", [self class], (long)index);
+//    NSLog(@"%@ %ld", [self class], (long)index);
 }
 
 @end
