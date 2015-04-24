@@ -9,12 +9,13 @@
 #import "EditThirdTableC.h"
 #import "EndsTableCell.h"
 #import "End.h"
+#import "DataEditTool.h"
 
 @interface EditThirdTableC () <UITextViewDelegate, UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 //这里面放的是End
-@property (nonatomic, retain) NSMutableArray *endsArray;
+@property (nonatomic, strong) NSMutableArray *endsArray;
 
 @property (weak, nonatomic) IBOutlet UIImageView *addImage;
 
@@ -29,7 +30,7 @@
     [super viewDidLoad];
     //从数据库中取数据
     
-    self.endsArray = [[NSMutableArray alloc] initWithCapacity:0];
+    self.endsArray = [DataEditTool shareEditDateTool].array;
     
     [self.endsArray addObject:[[End alloc] init]];
     [self.endsArray addObject:[[End alloc] init]];
@@ -37,6 +38,7 @@
     //Image点击监听
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addNewData)];
     [self.addImage addGestureRecognizer:singleTap];
+    
     
 }
 
@@ -117,6 +119,10 @@
     }else{
         self.addImage.hidden = NO;
     }
+    
+//    NSLog(@"Third %ld", [self.endsArray count]);
+//    NSLog(@"DataTool %ld", [[EditDataTool shareEditDateTool].array count]);
+    
     return [self.endsArray count]+1;
 }
 

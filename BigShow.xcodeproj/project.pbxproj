@@ -27,6 +27,7 @@
 		1FA97EE11ACD1FBE0075130C /* BSNavC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EE01ACD1FBE0075130C /* BSNavC.m */; };
 		1FA97EE41ACD2A810075130C /* BSMenuC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EE31ACD2A810075130C /* BSMenuC.m */; };
 		1FA97EE71ACD2C800075130C /* BSM.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA97EE61ACD2C800075130C /* BSM.m */; };
+		1FB2A0CD1AEA52B500C02E87 /* DataEditTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2A0CC1AEA52B500C02E87 /* DataEditTool.m */; };
 		1FE728861AE4AB4800C4F93A /* EditSegmentC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE728851AE4AB4800C4F93A /* EditSegmentC.m */; };
 		1FE7288D1AE4E57D00C4F93A /* EditFirstC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7288C1AE4E57D00C4F93A /* EditFirstC.m */; };
 		1FE728901AE4E59300C4F93A /* EditSecondC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE7288F1AE4E59300C4F93A /* EditSecondC.m */; };
@@ -94,6 +95,8 @@
 		1FA97EE31ACD2A810075130C /* BSMenuC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMenuC.m; sourceTree = "<group>"; };
 		1FA97EE51ACD2C800075130C /* BSM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSM.h; sourceTree = "<group>"; };
 		1FA97EE61ACD2C800075130C /* BSM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSM.m; sourceTree = "<group>"; };
+		1FB2A0CB1AEA52B500C02E87 /* DataEditTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEditTool.h; sourceTree = "<group>"; };
+		1FB2A0CC1AEA52B500C02E87 /* DataEditTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEditTool.m; sourceTree = "<group>"; };
 		1FE728841AE4AB4800C4F93A /* EditSegmentC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSegmentC.h; sourceTree = "<group>"; };
 		1FE728851AE4AB4800C4F93A /* EditSegmentC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSegmentC.m; sourceTree = "<group>"; };
 		1FE7288B1AE4E57D00C4F93A /* EditFirstC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFirstC.h; sourceTree = "<group>"; };
@@ -181,8 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				1FE7288A1AE4E1F300C4F93A /* EditController */,
-				1FE728841AE4AB4800C4F93A /* EditSegmentC.h */,
-				1FE728851AE4AB4800C4F93A /* EditSegmentC.m */,
 				1FA97EDF1ACD1FBE0075130C /* BSNavC.h */,
 				1FA97EE01ACD1FBE0075130C /* BSNavC.m */,
 				1FA97EE21ACD2A810075130C /* BSMenuC.h */,
@@ -213,9 +214,13 @@
 		1FE7288A1AE4E1F300C4F93A /* EditController */ = {
 			isa = PBXGroup;
 			children = (
+				1F3A603C1AE77C6200C4B3B6 /* PassValueDelegate.h */,
+				1FB2A0CB1AEA52B500C02E87 /* DataEditTool.h */,
+				1FB2A0CC1AEA52B500C02E87 /* DataEditTool.m */,
 				1F1CB96E1AE677150007E52D /* PhotoCollectionC.h */,
 				1F1CB96F1AE677150007E52D /* PhotoCollectionC.m */,
-				1F3A603C1AE77C6200C4B3B6 /* PassValueDelegate.h */,
+				1FE728841AE4AB4800C4F93A /* EditSegmentC.h */,
+				1FE728851AE4AB4800C4F93A /* EditSegmentC.m */,
 				1FE7288B1AE4E57D00C4F93A /* EditFirstC.h */,
 				1FE7288C1AE4E57D00C4F93A /* EditFirstC.m */,
 				1FE7288E1AE4E59300C4F93A /* EditSecondC.h */,
@@ -472,6 +477,7 @@
 				1FE7288D1AE4E57D00C4F93A /* EditFirstC.m in Sources */,
 				1FE728901AE4E59300C4F93A /* EditSecondC.m in Sources */,
 				1F6A073A1ACD470600770754 /* BSStacView.m in Sources */,
+				1FB2A0CD1AEA52B500C02E87 /* DataEditTool.m in Sources */,
 				1F6E1B131AD3BCD7003787D6 /* Story.m in Sources */,
 				1F6E1B191AD3C85C003787D6 /* BSFindCell.m in Sources */,
 				1F70666E1AE8DE4200649709 /* Slot.m in Sources */,

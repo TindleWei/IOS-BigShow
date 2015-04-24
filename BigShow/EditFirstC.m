@@ -10,6 +10,7 @@
 #import "PhotoTweaksViewController.h"
 #import "PhotoCollectionC.h"
 #import "PassValueDelegate.h"
+#import "EditSegmentC.h"
 
 @interface EditFirstC() <UITextFieldDelegate, UIImagePickerControllerDelegate,
     UINavigationControllerDelegate, UIActionSheetDelegate,
@@ -30,10 +31,9 @@
     self.titleText.delegate = self;
     self.nameText.delegate = self;
     
-    //Image点击监听
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showSheet:)];
     [self.avatarImage addGestureRecognizer:singleTap];
-
+    
 }
 
 #pragma mark - 软键盘操作
