@@ -7,9 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Story.h"
-#import "Slot.h"
-#import "End.h"
 
 @interface EditSegmentC : UIViewController
 

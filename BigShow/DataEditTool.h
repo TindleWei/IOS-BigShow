@@ -7,9 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Story.h"
+#import "Slot.h"
+#import "End.h"
 
 @interface DataEditTool : NSObject
 
+@property (nonatomic, strong) Story *story;
+@property (nonatomic, strong) Slot *slot;
 @property (nonatomic, strong) NSMutableArray *array;
 
 + (DataEditTool *)shareEditDateTool;

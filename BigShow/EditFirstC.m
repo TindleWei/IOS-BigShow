@@ -10,7 +10,8 @@
 #import "PhotoTweaksViewController.h"
 #import "PhotoCollectionC.h"
 #import "PassValueDelegate.h"
-#import "EditSegmentC.h"
+#import "Story.h"
+#import "DataEditTool.h"
 
 @interface EditFirstC() <UITextFieldDelegate, UIImagePickerControllerDelegate,
     UINavigationControllerDelegate, UIActionSheetDelegate,
@@ -18,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleText;
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImage;
+
+@property (nonatomic, strong) Story *story;
 
 //图片的传值
 @property (nonatomic, copy) NSString* imagePath;
@@ -33,6 +36,8 @@
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showSheet:)];
     [self.avatarImage addGestureRecognizer:singleTap];
+    
+    self.story = [DataEditTool shareEditDateTool].story;
     
 }
 

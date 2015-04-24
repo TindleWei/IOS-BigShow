@@ -10,6 +10,8 @@
 #import "PhotoTweaksViewController.h"
 #import "PhotoCollectionC.h"
 #import "PassValueDelegate.h"
+#import "Slot.h"
+#import "DataEditTool.h"
 
 @interface EditSecondC() <UITextViewDelegate , UIImagePickerControllerDelegate,
     UINavigationControllerDelegate, UIActionSheetDelegate,
@@ -17,6 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *contentImage;
 @property (weak, nonatomic) IBOutlet UITextView *contentText;
+
+@property (nonatomic, strong) Slot *slot;
 
 //图片的传值
 @property (nonatomic, copy) NSString* imagePath;
@@ -32,6 +36,8 @@
     //Image点击监听
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showSheet:)];
     [self.contentImage addGestureRecognizer:singleTap];
+    
+    self.slot = [DataEditTool shareEditDateTool].slot;
     
 }
 

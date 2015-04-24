@@ -18,10 +18,7 @@ static DataEditTool *_editDataTool = nil;
     dispatch_once(&once_t, ^{
         _editDataTool = [[DataEditTool alloc] init];
     });
-    
-//    if (!editDataTool){
-//        editDataTool = [[EditDataTool alloc] init];
-//    }
+
     return _editDataTool;
 }
 
@@ -29,6 +26,8 @@ static DataEditTool *_editDataTool = nil;
 {
     if (self = [super init]) {
         self.array = [NSMutableArray array];
+        self.story = [[Story alloc] init];
+        self.slot = [[Slot alloc] init];
     }
     return self;
 }
