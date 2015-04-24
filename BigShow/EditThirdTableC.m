@@ -26,6 +26,10 @@
 
 #pragma mark - View & LifeCycle
 
+- (void)viewWillDisappear:(BOOL)animated{
+    NSLog(@"3 viewWillDisappear");
+}
+
 -(void)viewDidLoad {
     [super viewDidLoad];
     //从数据库中取数据

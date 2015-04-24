@@ -29,6 +29,13 @@
 
 @implementation EditSecondC
 
+- (void)viewDidDisappear:(BOOL)animated{
+    NSLog(@"2 viewDidDisappear");
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    NSLog(@"2 viewWillDisappear");
+}
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.contentText.delegate = self;

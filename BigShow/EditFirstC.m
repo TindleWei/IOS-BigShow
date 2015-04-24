@@ -29,6 +29,10 @@
 
 @implementation EditFirstC
 
+- (void)viewWillDisappear:(BOOL)animated{
+    NSLog(@"1 viewWillDisappear");
+}
+
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.titleText.delegate = self;
