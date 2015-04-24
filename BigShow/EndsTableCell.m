@@ -19,17 +19,6 @@
 
 @implementation EndsTableCell
 
-- (IBAction)deleteCell:(id)sender {
-    
-    UITableView* tableView = (UITableView *)self.superview;
-    NSIndexPath* pathOfTheCell = [tableView indexPathForCell:self];
-    NSInteger rowOfTheCell = pathOfTheCell.row;
-    [tableView deleteRowsAtIndexPaths:@[pathOfTheCell] withRowAnimation:UITableViewRowAnimationFade];
-    [tableView reloadData];
-    
-    
-     NSLog(@"delet");
-}
 
 -(void)setKeyTypeDone{
     [self.contentText setReturnKeyType: UIReturnKeyDone];

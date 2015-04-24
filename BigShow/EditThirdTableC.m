@@ -111,16 +111,16 @@
 #pragma mark - UITableView Datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if([self.endsArray count]>=4){
+        self.addImage.hidden = YES;
+    }else{
+        self.addImage.hidden = NO;
+    }
     return [self.endsArray count]+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    static NSString *CellIdentifier = @"ProductCell";
-//    ProductCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (cell == nil) {
-//        cell = [[ProductCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//    }
     
     if (indexPath.row == 0) {
         
@@ -132,28 +132,21 @@
         if (cell == nil) {
             cell = [[EndsTableCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
-//        EndsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EndsTableCell class]) forIndexPath:indexPath];
-        
         
         //Image点击监听
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deleteCellData:)] ;
         [[cell deleteImage] addGestureRecognizer:singleTap];
-        
         [cell deleteImage].tag = indexPath.row;
-        NSLog(@"init cell.tag :%ld",(long)[cell deleteImage].tag);
         
         [cell setKeyTypeDone];
         
         return cell;
-
     }
 }
 
 -(void)deleteCellData:(UITapGestureRecognizer*)tap{
     
     UIImageView *imageView = (UIImageView *)tap.view;
-    NSLog(@"delete imageView.tag = %ld",imageView.tag);
-
     [self.endsArray removeObjectAtIndex:(imageView.tag-1)];
     [self.tableView reloadData];
 }
