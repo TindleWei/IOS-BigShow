@@ -8,16 +8,19 @@
 
 #import "EditThirdTableC.h"
 #import "EndsTableCell.h"
+#import "End.h"
 
 @interface EditThirdTableC () <UITextViewDelegate, UITextFieldDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, copy) NSMutableArray *endsArray;
+
+//这里面放的是End
+@property (nonatomic, retain) NSMutableArray *endsArray;
+
+@property (weak, nonatomic) IBOutlet UIImageView *addImage;
 
 @end
 
 @implementation EditThirdTableC
-
-
 
 #pragma mark - View & LifeCycle
 
@@ -25,6 +28,21 @@
     [super viewDidLoad];
     //从数据库中取数据
     
+    self.endsArray = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    [self.endsArray addObject:[[End alloc] init]];
+    [self.endsArray addObject:[[End alloc] init]];
+    
+    //Image点击监听
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addNewData)];
+    [self.addImage addGestureRecognizer:singleTap];
+    
+}
+
+-(void)addNewData{
+    End *end = [[End alloc] init];
+    [self.endsArray addObject:end];
+    [self.tableView reloadData];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -90,25 +108,56 @@
     return YES;
 }
 
-
 #pragma mark - UITableView Datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return [self.endsArray count]+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+//    static NSString *CellIdentifier = @"ProductCell";
+//    ProductCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if (cell == nil) {
+//        cell = [[ProductCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    }
+    
     if (indexPath.row == 0) {
+        
         return [tableView dequeueReusableCellWithIdentifier:@"question_cell" forIndexPath:indexPath];
-    }
-    
-    EndsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EndsTableCell class]) forIndexPath:indexPath];
-    
-    [cell setKeyTypeDone];
+    } else{
+        
+        static NSString *CellIdentifier = @"EndsTableCell";
+        EndsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[EndsTableCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+//        EndsTableCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([EndsTableCell class]) forIndexPath:indexPath];
+        
+        
+        //Image点击监听
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deleteCellData:)] ;
+        [[cell deleteImage] addGestureRecognizer:singleTap];
+        
+        [cell deleteImage].tag = indexPath.row;
+        NSLog(@"init cell.tag :%ld",(long)[cell deleteImage].tag);
+        
+        [cell setKeyTypeDone];
+        
+        return cell;
 
-    return cell;
+    }
 }
+
+-(void)deleteCellData:(UITapGestureRecognizer*)tap{
+    
+    UIImageView *imageView = (UIImageView *)tap.view;
+    NSLog(@"delete imageView.tag = %ld",imageView.tag);
+
+    [self.endsArray removeObjectAtIndex:(imageView.tag-1)];
+    [self.tableView reloadData];
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -118,12 +167,10 @@
     return 98;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
 }
-
 
 
 @end

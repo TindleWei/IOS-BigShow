@@ -12,4 +12,12 @@
 
 @dynamic choosenContent, endContent, endPhoto, isCompleted, fromSlot, endNext;
 
+//- (id) init
+//{
+//    if (self = [super init]){
+//        
+//    }
+//    return self;
+//}
+
 @end

@@ -378,14 +378,20 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="UFM-8e-8Rw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                        <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navBg" id="CBb-OH-eO4">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="W1i-X2-EK3">
+                            <rect key="frame" x="0.0" y="210" width="320" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
+                            <subviews>
+                                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" id="Vlg-UY-Pz3">
+                                    <rect key="frame" x="130" y="18" width="44" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="question_cell" rowHeight="90" id="lCn-h9-ras">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="question_cell" rowHeight="90" id="lCn-h9-ras">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lCn-h9-ras" id="gtU-UV-Vc1">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -404,7 +410,7 @@
                                     <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EndsTableCell" rowHeight="98" id="yzw-HG-kV8" customClass="EndsTableCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EndsTableCell" rowHeight="98" id="yzw-HG-kV8" customClass="EndsTableCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzw-HG-kV8" id="Aht-VW-zi3">
@@ -440,7 +446,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings" id="s7S-DO-L3l">
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings" id="s7S-DO-L3l">
                                             <rect key="frame" x="290" y="0.0" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -462,6 +468,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="addImage" destination="Vlg-UY-Pz3" id="yaa-0t-UMK"/>
                         <outlet property="tableView" destination="UFM-8e-8Rw" id="cwL-xU-5dt"/>
                     </connections>
                 </tableViewController>
@@ -641,10 +648,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="circle" width="60" height="60"/>
         <image name="head" width="64" height="64"/>
         <image name="head.png" width="24" height="24"/>
         <image name="home" width="24" height="24"/>
-        <image name="navBg" width="25" height="44"/>
         <image name="near" width="24" height="24"/>
         <image name="settings" width="24" height="24"/>
     </resources>

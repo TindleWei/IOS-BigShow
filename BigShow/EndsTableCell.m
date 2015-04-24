@@ -9,15 +9,27 @@
 #import "EndsTableCell.h"
 
 @interface EndsTableCell ()
-@property (weak, nonatomic) IBOutlet UILabel *orderText;
-@property (weak, nonatomic) IBOutlet UITextField *contentText;
-@property (weak, nonatomic) IBOutlet UILabel *statusText;
-@property (weak, nonatomic) IBOutlet UIImageView *deleteImage;
+//@property (weak, nonatomic) IBOutlet UILabel *orderText;
+//@property (weak, nonatomic) IBOutlet UITextField *contentText;
+//@property (weak, nonatomic) IBOutlet UILabel *statusText;
+//@property (weak, nonatomic) IBOutlet UIImageView *deleteImage;
 
 
 @end
 
 @implementation EndsTableCell
+
+- (IBAction)deleteCell:(id)sender {
+    
+    UITableView* tableView = (UITableView *)self.superview;
+    NSIndexPath* pathOfTheCell = [tableView indexPathForCell:self];
+    NSInteger rowOfTheCell = pathOfTheCell.row;
+    [tableView deleteRowsAtIndexPaths:@[pathOfTheCell] withRowAnimation:UITableViewRowAnimationFade];
+    [tableView reloadData];
+    
+    
+     NSLog(@"delet");
+}
 
 -(void)setKeyTypeDone{
     [self.contentText setReturnKeyType: UIReturnKeyDone];

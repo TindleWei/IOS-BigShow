@@ -10,6 +10,12 @@
 
 @interface EndsTableCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *orderText;
+@property (weak, nonatomic) IBOutlet UITextField *contentText;
+@property (weak, nonatomic) IBOutlet UILabel *statusText;
+@property (weak, nonatomic) IBOutlet UIImageView *deleteImage;
+
+
 -(void)setKeyTypeDone;
 
 @end
