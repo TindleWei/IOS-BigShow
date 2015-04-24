@@ -379,7 +379,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="sectionIndexBackgroundColor" red="0.17000080906301707" green="0.56028099118481134" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navBg" id="CBb-OH-eO4">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="question_cell" rowHeight="90" id="lCn-h9-ras">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -392,12 +396,15 @@
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="GTk-N5-jio" id="fw8-zV-pXb"/>
+                                            </connections>
                                         </textView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ends_cell" rowHeight="98" id="yzw-HG-kV8">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EndsTableCell" rowHeight="98" id="yzw-HG-kV8" customClass="EndsTableCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzw-HG-kV8" id="Aht-VW-zi3">
@@ -419,6 +426,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="GTk-N5-jio" id="SY1-Oq-JVL"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WJO-iv-Maz">
                                                     <rect key="frame" x="255" y="0.0" width="37" height="42"/>
@@ -436,9 +446,16 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="1" green="0.051146205229999998" blue="0.015877777629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="contentText" destination="UXl-YO-OnE" id="12n-tb-SlT"/>
+                                    <outlet property="deleteImage" destination="s7S-DO-L3l" id="XBY-pN-OaI"/>
+                                    <outlet property="orderText" destination="m7x-Wi-WiP" id="YVU-qi-oi0"/>
+                                    <outlet property="statusText" destination="WJO-iv-Maz" id="zJV-DX-LIo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="GTk-N5-jio" id="qW2-pR-2on"/>
                             <outlet property="delegate" destination="GTk-N5-jio" id="5J2-Wl-Nsq"/>
@@ -627,6 +644,7 @@
         <image name="head" width="64" height="64"/>
         <image name="head.png" width="24" height="24"/>
         <image name="home" width="24" height="24"/>
+        <image name="navBg" width="25" height="44"/>
         <image name="near" width="24" height="24"/>
         <image name="settings" width="24" height="24"/>
     </resources>

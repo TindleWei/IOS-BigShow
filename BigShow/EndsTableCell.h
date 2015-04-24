@@ -10,5 +10,6 @@
 
 @interface EndsTableCell : UITableViewCell
 
+-(void)setKeyTypeDone;
 
 @end
