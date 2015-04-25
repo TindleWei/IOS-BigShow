@@ -31,6 +31,10 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     NSLog(@"1 viewWillDisappear");
+    self.story.storyTitle = _titleText.text;
+    self.story.storyName = _nameText.text;
+    self.story.avatarFile = _avatarImage.image;
+    
 }
 
 -(void)viewDidLoad{
@@ -42,12 +46,7 @@
     [self.avatarImage addGestureRecognizer:singleTap];
     
     self.story = [DataEditTool shareEditDateTool].story;
-//    [self.story storyName] = self.titleText.text;
-    
-    NSLog(@"titleText: %@",_titleText.text);
-    self.story.storyTitle = @"XiaoMing";
-//    self.story.storyTitle = _titleText.text;
-//    self.story.storyName = _nameText.text;
+
 //    self.story.storyAvatar
     
     

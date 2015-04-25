@@ -9,6 +9,8 @@
 #import "EditSegmentC.h"
 #import "MBXPageViewController.h"
 #import "BSProgressView.h"
+#import "DataEditTool.h"
+#import "Story.h"
 
 @interface EditSegmentC () <MBXPageControllerDataSource, MBXPageControllerDataDelegate>
 
@@ -52,6 +54,17 @@
 
 -(void)onSaveBtn:(UIButton*)btn{
     NSLog(@"onSaveBtn");
+    
+    
+    Story *story = [DataEditTool shareEditDateTool].story;
+    
+    NSData *imageData = UIImagePNGRepresentation(story.avatarFile);
+    AVFile *imageFile = [AVFile fileWithName:@"image.png" data:imageData];
+    [imageFile save];
+    
+    [story setObject:imageFile   forKey:@"imageFile"];
+    [story save];
+    
 }
 
 #pragma mark - MBXPageViewController Data Source

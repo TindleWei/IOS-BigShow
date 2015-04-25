@@ -27,4 +27,7 @@
 
 @property(nonatomic, assign) NSInteger *hotScore;
 
+#pragma mark - add
+@property(nonatomic, strong) UIImage *avatarFile;
+
 @end
