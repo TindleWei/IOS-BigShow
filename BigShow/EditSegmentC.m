@@ -39,12 +39,15 @@
 }
 
 -(void)initSaveBtn{
-    UIButton *searchBtn=[UIButton buttonWithType:UIButtonTypeCustom];
-    searchBtn.frame=CGRectMake(0, 0, 44, 44);
-    [searchBtn setImage:[UIImage imageNamed:@"side_button"] forState:UIControlStateNormal];
-    [searchBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-    [searchBtn addTarget:self action:@selector(onSaveBtn:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:searchBtn];
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStyleBordered target:self action:@selector(onSaveBtn:)];
+    
+    
+//    UIButton *searchBtn=[UIButton buttonWithType:UIButtonTypeCustom];
+//    searchBtn.frame=CGRectMake(0, 0, 44, 44);
+//    [searchBtn setImage:[UIImage imageNamed:@"side_button"] forState:UIControlStateNormal];
+//    [searchBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+//    [searchBtn addTarget:self action:@selector(onSaveBtn:) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.rightBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:searchBtn];
 }
 
 -(void)onSaveBtn:(UIButton*)btn{

@@ -26,7 +26,8 @@ static DataEditTool *_editDataTool = nil;
 {
     if (self = [super init]) {
         self.array = [NSMutableArray array];
-        self.story = [[Story alloc] init];
+//        self.story = [[Story alloc] init];
+        self.story = [Story object];
         self.slot = [[Slot alloc] init];
     }
     return self;

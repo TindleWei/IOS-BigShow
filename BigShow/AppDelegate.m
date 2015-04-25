@@ -14,6 +14,9 @@
 
 #import <MMDrawerController/MMDrawerController.h>
 #import "BSNavView.h"
+#import "Story.h"
+#import "Slot.h"
+#import "End.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +26,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [AVOSCloud setApplicationId:@"bp8bg4jqsnvc719ozomgp0ohvt6qa2n03o7e5sfe95v69j05" clientKey:@"u5rlevm51o2xjgvmkadomjk7lzfezhsir8fdjprmbz44x4dz"];
+    [AVOSCloud setLastModifyEnabled:YES];
+    [AVAnalytics setCrashReportEnabled:YES];
+    
+    [Story registerSubclass];
+    [Slot registerSubclass];
+    [End registerSubclass];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -53,9 +64,6 @@
     bg.alpha=0.8;
     [self.window addSubview:bg];
     
-    [AVOSCloud setApplicationId:@"bp8bg4jqsnvc719ozomgp0ohvt6qa2n03o7e5sfe95v69j05" clientKey:@"u5rlevm51o2xjgvmkadomjk7lzfezhsir8fdjprmbz44x4dz"];
-    [AVOSCloud setLastModifyEnabled:YES];
-    [AVAnalytics setCrashReportEnabled:YES];
     
     UIStoryboard *board=[UIStoryboard storyboardWithName:@"Main" bundle:Nil];
     
